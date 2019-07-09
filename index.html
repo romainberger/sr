@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>SongRiffer</title>
+    <description></description>
     <style>
       html, body {
         height: 100%;
@@ -20,10 +21,44 @@
         font-size: 20px;
         font-family: sans-serif;
       }
+
+      .download-link {
+        display: block;
+        text-decoration: none;
+        border-radius: 3px;
+        border: 1px solid #eee;
+        color: #eee;
+      }
     </style>
 </head>
 <body>
-    <div>soon</div>
+    <div class="root">
+        <header>
+            <h1>SongRiffer</h1>
+        </header>
+        <div>
+            <div>The only riff library made for and by musicians, 100% free</div>
+            <div>Download:</div>
+            <div>
+                <a class="download-link" href="#" download id="download-mac">Mac</a>
+                <a class="download-link" href="#" download id="download-windows">Windows</a>
+            </div>
+        </div>
+        <div>
+            <h2>Features</h2>
+            <div>
+                <div>Organize and quickly browse your riffs and song ideas.</div>
+                <div>image</div>
+            </div>
+            <div>Search for the perfect riff and preview it</div>
+            <div>image</div>
+        </div>
+        <div>
+            <div>about</div>
+            <div>Feedback and support</div>
+            <div>Follow for news and updates</div>
+        </div>
+    </div>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142711477-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -31,6 +66,18 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-142711477-1');
+
+        fetch('/update-mac.json')
+            .then(res => res.json())
+            .then(data => {
+                document.querySelector('#download-mac').href = data.url
+            })
+
+        fetch('/update-windows.json')
+            .then(res => res.json())
+            .then(data => {
+                document.querySelector('#download-windows').href = data.url
+            })
     </script>
 </body>
 </html>
