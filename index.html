@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>SongRiffer</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <style>
         html, body {
             height: 100%;
@@ -22,6 +23,7 @@
         header {
             position: relative;
             min-height: 500px;
+            padding-bottom: 50px;
             background: #121212;
             background: radial-gradient(ellipse at top, #8086FF, transparent),
                 radial-gradient(ellipse at left, #963c57, transparent),
@@ -29,15 +31,32 @@
             overflow: hidden;
         }
 
+        header:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 400px;
+            background: radial-gradient(ellipse at top, #8086FF, transparent),
+                radial-gradient(ellipse at bottom, #963c57, transparent),
+                radial-gradient(ellipse at right, #68459b, transparent);
+            transform: rotate(35deg);
+            top: -100px;
+            right: -600px;
+            opacity: 0.5;
+        }
+
         header:after {
             position: absolute;
             content: '';
             width: 100%;
             height: 200px;
-            background: #2e2e2e;
+            background: radial-gradient(ellipse at top, #8086FF, transparent),
+                radial-gradient(ellipse at bottom, #963c57, transparent),
+                radial-gradient(ellipse at left, #68459b, transparent);
             transform: rotate(-15deg);
             bottom: -194px;
             left: 65px;
+            opacity: 0.8;
         }
 
         .header-content {
@@ -65,7 +84,8 @@
             max-width: 100%;
             height: 100px;
             margin-top: 120px;
-            transform: scale(2);
+            transform: scale(1.5);
+            transform-origin: left;
         }
 
         .logo path {
@@ -87,7 +107,7 @@
         }
 
         .subtitle-second {
-            margin-bottom: 25px;
+            margin-bottom: 60px;
             font-size: 24px;
             font-weight: normal;
             text-align: left;
@@ -120,7 +140,7 @@
             border: 1px solid #eee;
             color: #eee;
             background: #3B4096;
-            transition: background ease 0.3s;
+            transition: background ease 0.2s;
         }
 
         .download-link:hover {
@@ -128,7 +148,9 @@
         }
 
         .header-img-wrapper {
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 40%;
             height: 100%;
             z-index: 2;
@@ -205,13 +227,20 @@
                     <div>Organize and quickly browse your riffs and song ideas.</div>
                     <div>image</div>
                 </div>
-                <div>Search for the perfect riff and preview it</div>
-                <div>image</div>
+                <div>
+                    <div>image</div>
+                    <div>Search for the perfect riff</div>
+                </div>
+                <div>
+                    <div>Preview your riffs and speed up your songwriting</div>
+                    <div>image</div>
+                </div>
+                <div>No more lost ideas or waster time listening to yet another idea-v2.wav, SongRiffer will improve your creative process so you can focus on what matters: writing damn good songs.</div>
             </div>
             <div>
-                <div>about</div>
                 <div>Feedback and support</div>
                 <div>Follow for news and updates</div>
+                <div>about</div>
             </div>
         </div>
     </div>
