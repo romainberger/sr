@@ -3,13 +3,5 @@
   "version": "0.1.0",
   "repository": "git@github.com:romainberger/songriffer.com.git",
   "author": "Romain Berger <romain@romainberger.com>",
-  "license": "MIT",
-  "dependencies": {
-    "webpack": "4.35.3",
-    "webpack-cli": "3.3.5"
-  },
-  "scripts": {
-    "start": "webpack --config webpack.config.js --watch",
-    "build": "NODE_ENV=production webpack --config webpack.config.js && cp index.html 404.html"
-  }
+  "license": "MIT"
 }

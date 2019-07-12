@@ -15,7 +15,7 @@ fetch(`${baseUrl}/update-mac.json?t=${+new Date()}`)
         document.querySelector('#download-mac').href = data.url
     })
 
-fetch(`${baseUrl}/update-windows.json?t=${+new Date()}`)
+fetch(`${baseUrl}/update-win.json?t=${+new Date()}`)
     .then(res => res.json())
     .then(data => {
         document.querySelector('#download-windows').href = data.url
