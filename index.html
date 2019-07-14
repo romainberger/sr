@@ -24,7 +24,7 @@
             position: relative;
             min-height: 500px;
             padding-bottom: 50px;
-            background: #121212;
+            background: #8086FF;
             background: radial-gradient(ellipse at top, #8086FF, transparent),
                 radial-gradient(ellipse at left, #963c57, transparent),
                 radial-gradient(ellipse at right, #68459b, transparent);
@@ -71,7 +71,7 @@
         }
 
         .description {
-            width: 60%;
+            width: 55%;
         }
 
         h1 {
@@ -104,12 +104,13 @@
             font-size: 24px;
             font-weight: bold;
             text-align: left;
+            letter-spacing: 0.5px;
         }
 
         .subtitle-second {
             margin-bottom: 60px;
             font-size: 24px;
-            font-weight: normal;
+            font-weight: lighter;
             text-align: left;
         }
 
@@ -148,10 +149,11 @@
         }
 
         .header-img-wrapper {
+
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40%;
+            width: 45%;
             height: 100%;
             z-index: 2;
         }
@@ -163,6 +165,29 @@
         .content {
             max-width: 1000px;
             margin: 0 auto;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 45px 0;
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 3px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        section > div {
+            width: 50%;
+            padding: 50px;
+        }
+
+        section img {
+            width: 100%;
         }
     </style>
 </head>
@@ -216,25 +241,34 @@
                     </div>
                 </div>
                 <div class="header-img-wrapper">
-                    <img class="header-img" src="assets/screenshot.jpg" />
+                    <img class="header-img" src="assets/screenshot-header.png" />
                 </div>
             </div>
         </header>
         <div class="content">
             <div>
                 <h2>Features</h2>
-                <div>
-                    <div>Organize and quickly browse your riffs and song ideas.</div>
-                    <div>image</div>
-                </div>
-                <div>
-                    <div>image</div>
-                    <div>Search for the perfect riff</div>
-                </div>
-                <div>
-                    <div>Preview your riffs and speed up your songwriting</div>
-                    <div>image</div>
-                </div>
+                <section>
+                    <div>
+                        <div class="title">Organize and quickly browse your riffs and song ideas.</div>
+                        <div class="feature-description">Add tags, rate your riff...</div>
+                    </div>
+                    <div><img src="assets/header-2.gif" /></div>
+                </section>
+                <section>
+                    <div><img src="assets/header-2.gif" /></div>
+                    <div>
+                        <div class="title">Search for the perfect riff</div>
+                        <div class="feature-description"></div>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <div class="title">Preview your riffs and speed up your songwriting</div>
+                        <div class="feature-description"></div>
+                    </div>
+                    <div><img src="assets/header-2.gif" /></div>
+                </section>
                 <div>No more lost ideas or wasted time listening to yet another <code>idea-v2.wav</code>, SongRiffer will improve your creative process so you can focus on what matters: writing damn good songs.</div>
             </div>
             <div>
