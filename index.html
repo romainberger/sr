@@ -3,6 +3,7 @@
 <head>
     <title>SongRiffer</title>
     <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="google-site-verification" content="NtQTcrRTr-dxfiRPfAz8gPmGaxNsb8saFpQ8dv1lU7M" />
     <style>
         html, body {
             height: 100%;
@@ -14,7 +15,7 @@
         body {
             display: flex;
             flex-direction: column;
-            color: #eee;
+            color: #dedede;
             background: #2e2e2e;
             font-size: 20px;
             font-family: sans-serif;
@@ -23,7 +24,7 @@
         header {
             position: relative;
             min-height: 500px;
-            padding-bottom: 50px;
+            padding-bottom: 120px;
             background: #8086FF;
             background: radial-gradient(ellipse at top, #8086FF, transparent),
                 radial-gradient(ellipse at left, #963c57, transparent),
@@ -71,7 +72,7 @@
         }
 
         .description {
-            width: 55%;
+            width: 45%;
         }
 
         h1 {
@@ -89,11 +90,11 @@
         }
 
         .logo path {
-            fill: #eee;
+            fill: #dedede;
         }
 
         .download-block {
-            width: 70%;
+            width: 90%;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -138,8 +139,8 @@
             padding: 20px 0;
             text-decoration: none;
             border-radius: 3px;
-            border: 1px solid #eee;
-            color: #eee;
+            border: 1px solid #dedede;
+            color: #dedede;
             background: #3B4096;
             transition: background ease 0.2s;
         }
@@ -149,11 +150,10 @@
         }
 
         .header-img-wrapper {
-
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 45%;
+            width: 55%;
             height: 100%;
             z-index: 2;
         }
@@ -163,7 +163,7 @@
         }
 
         .content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -173,6 +173,12 @@
             text-align: center;
             font-weight: lighter;
             letter-spacing: 3px;
+            font-size: 45px;
+        }
+
+        .feature-description-main {
+            width: 90%;
+            margin: auto;
         }
 
         section {
@@ -188,6 +194,89 @@
 
         section img {
             width: 100%;
+        }
+
+        section .title {
+            margin-bottom:
+            font-size: 24px;
+            font-weight: lighter;
+        }
+
+        .feature-description {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 50px 0;
+            border-top: 1px solid #dedede;
+            background: radial-gradient(ellipse at top, #8086FF, transparent),
+                radial-gradient(ellipse at left, #963c57, transparent),
+                radial-gradient(ellipse at right, #68459b, transparent);
+        }
+
+        .footer {
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+            font-weight: lighter;
+            font-size: 16px;
+        }
+
+        .footer > div {
+            width: 50%;
+        }
+
+        .footer a {
+            color: #dedede;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1250px) {
+            header {
+                padding: 100px 25px;
+            }
+
+            .header-content {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 50px 25px;
+            }
+
+            .header-content {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .description,
+            .download-link {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 35px;
+            }
+
+            section > div {
+                width: 100%;
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -235,48 +324,66 @@
                         <div class="download-title">Download</div>
                         <div class="version" id="version"></div>
                         <div class="download-links">
-                            <a class="download-link" href="#" download id="download-mac" data-platform="mac">Mac</a>
-                            <a class="download-link" href="#" download id="download-windows" data-platform="windows">Windows</a>
+                            <a class="download-link" href="#" download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">Mac</a>
+                            <a class="download-link" href="#" download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">Windows</a>
                         </div>
                     </div>
                 </div>
                 <div class="header-img-wrapper">
-                    <img class="header-img" src="assets/screenshot-header.png" />
+                    <img class="header-img" src="assets/screenshot-header.png" alt="Songwriting tool app for Mac and Windows" />
                 </div>
             </div>
         </header>
         <div class="content">
             <div>
                 <h2>Features</h2>
+                <div class="feature-description-main">No more lost ideas or wasted time listening to yet another <code>idea-v2.wav</code>, SongRiffer will improve your creative process so you can focus on what matters: writing damn good songs.</div>
                 <section>
                     <div>
-                        <div class="title">Organize and quickly browse your riffs and song ideas.</div>
+                        <h3 class="title">Organize and quickly browse your riffs and song ideas.</h3>
                         <div class="feature-description">Add tags, rate your riff...</div>
                     </div>
-                    <div><img src="assets/header-2.gif" /></div>
+                    <div><img src="assets/header-2.gif" alt="Organize and browse your riffs and ideas" /></div>
                 </section>
                 <section>
-                    <div><img src="assets/header-2.gif" /></div>
+                    <div><img src="assets/header-2.gif" alt="Find the perfect songwriting idea" /></div>
                     <div>
-                        <div class="title">Search for the perfect riff</div>
-                        <div class="feature-description"></div>
+                        <h3 class="title">Search for the perfect riff</h3>
+                        <div class="feature-description">
+                            Stuck by creative block, or just searching for riffs for a new song? SongRiffer makes it easy to filter your riffs so you can find badass ideas you forgot about.
+                            The quick search will allow you to BLABNLA, and with the advanced search you will be able to fine tune your criteria and find exactly what you need.
+                        </div>
                     </div>
                 </section>
                 <section>
                     <div>
-                        <div class="title">Preview your riffs and speed up your songwriting</div>
-                        <div class="feature-description"></div>
+                        <h3 class="title">Preview your riffs and speed up your songwriting</h3>
+                        <div class="feature-description">
+                            You can listen to your riffs directly through SongRiffer to know directly what they sound like.
+                        </div>
                     </div>
-                    <div><img src="assets/header-2.gif" /></div>
+                    <div><img src="assets/header-2.gif" alt="Preview and listen to your riffs" /></div>
                 </section>
-                <div>No more lost ideas or wasted time listening to yet another <code>idea-v2.wav</code>, SongRiffer will improve your creative process so you can focus on what matters: writing damn good songs.</div>
-            </div>
-            <div>
-                <div>Feedback and support</div>
-                <div>Follow for news and updates</div>
-                <div>about</div>
+                <div>
+                    <h3>More to come...</h3>
+                    <div>SongRiffer will improve and gain more features continuously to help you even more.</div>
+                </div>
             </div>
         </div>
+        <footer>
+            <div class="content footer">
+                <div>
+                    <div>
+                        <a href="mailto:hello@songriffer.com">Feedback and support</a>
+                    </div>
+                </div>
+                <div>
+                    <div>Follow us for news and updates:</div>
+                    <div><a href="https://www.facebook.com/songrifferapp">SongRiffer on Facebook</a></div>
+                    <div><a href="https://www.instagram.com/songrifferapp">SongRiffer on Facebook</a></div>
+                </div>
+            </div>
+        </footer>
     </div>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142711477-1"></script>
     <script src="src/index.js"></script>

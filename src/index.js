@@ -11,7 +11,7 @@ const baseUrl = 'http://songriffer.com'
 fetch(`${baseUrl}/update-mac.json?t=${+new Date()}`)
     .then(res => res.json())
     .then(data => {
-        document.querySelector('#version').innerHTML = `version ${data.version}`
+        document.querySelector('#version').innerHTML = `version ${data.version} (beta)`
         document.querySelector('#download-mac').href = data.url
     })
 
