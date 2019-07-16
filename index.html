@@ -5,6 +5,13 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <meta name="google-site-verification" content="NtQTcrRTr-dxfiRPfAz8gPmGaxNsb8saFpQ8dv1lU7M" />
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
         html, body {
             height: 100%;
             min-height: 100%;
@@ -245,6 +252,7 @@
             align-items: top;
             font-weight: lighter;
             font-size: 16px;
+            line-height: 2;
         }
 
         .footer > div {
@@ -295,9 +303,24 @@
                 margin-bottom: 35px;
             }
 
+            .reverse {
+                flex-direction: column-reverse;
+            }
+
             section > div {
                 width: 100%;
                 padding: 25px;
+            }
+
+            .feature-img {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .footer {
+                width: 90%;
+                margin: 0 auto;
+                flex-direction: column;
             }
         }
     </style>
@@ -365,10 +388,10 @@
                         <h3 class="title">Organize and quickly browse your riffs and song ideas.</h3>
                         <div class="feature-description">Describing your riff is what will make your creation process faster in the future. Add tags, rate your riff, Songriffer will try to calculate the tempo to help you. Once everything is set and your library is well organized, you will no longer be looking at a meaningless list of files with obscure names. All your ideas and riffs are accessible and easy to browse.</div>
                     </div>
-                    <div><img src="assets/feature-1-combined-opt.gif" alt="Organize and browse your riffs and ideas" /></div>
+                    <div class="feature-img"><img src="assets/feature-1-combined-opt.gif" alt="Organize and browse your riffs and ideas" /></div>
                 </section>
-                <section>
-                    <div><img src="assets/search-opt.gif" alt="Find the perfect songwriting idea" /></div>
+                <section class="reverse">
+                    <div class="feature-img"><img src="assets/search-opt.gif" alt="Find the perfect songwriting idea" /></div>
                     <div>
                         <h3 class="title">Search for the perfect riff</h3>
                         <div class="feature-description">
@@ -384,7 +407,7 @@
                             You can listen to your riffs directly through SongRiffer to know directly what they sound like. Your songwriting process will no longer be interrupted by blindly listening to dozens of riffs, you can directly hand pick the one matching your current composition, and know instantly if they can fit or not.
                         </div>
                     </div>
-                    <div><img src="assets/preview-riffs-opt.gif" alt="Preview and listen to your riffs" /></div>
+                    <div class="feature-img"><img src="assets/preview-riffs-opt.gif" alt="Preview and listen to your riffs" /></div>
                 </section>
                 <div class="future">
                     <h3>More to come...</h3>
