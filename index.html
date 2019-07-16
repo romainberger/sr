@@ -23,6 +23,13 @@
             font-family: sans-serif;
         }
 
+        ::selection {
+            background: #7C5AB0;
+        }
+        ::-moz-selection {
+            background: #7C5AB0;
+        }
+
         header {
             position: relative;
             min-height: 500px;
@@ -201,13 +208,25 @@
 
         section .title {
             margin-bottom:
-            font-size: 24px;
+            font-size: 25px;
             font-weight: lighter;
         }
 
         .feature-description {
             font-size: 18px;
             text-align: justify;
+        }
+
+        .future {
+            padding: 20px 100px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .content a {
+            color: #dedede;
+            text-decoration: underline;
         }
 
         footer {
@@ -344,7 +363,7 @@
                 <section>
                     <div>
                         <h3 class="title">Organize and quickly browse your riffs and song ideas.</h3>
-                        <div class="feature-description">Add tags, rate your riff...</div>
+                        <div class="feature-description">Describing your riff is what will make your creation process faster in the future. Add tags, rate your riff, Songriffer will try to calculate the tempo to help you. Once everything is set and your library is well organized, you will no longer be looking at a meaningless list of files with obscure names. All your ideas and riffs are accessible and easy to browse.</div>
                     </div>
                     <div><img src="assets/feature-1-combined-opt.gif" alt="Organize and browse your riffs and ideas" /></div>
                 </section>
@@ -362,14 +381,14 @@
                     <div>
                         <h3 class="title">Preview your riffs and speed up your songwriting</h3>
                         <div class="feature-description">
-                            You can listen to your riffs directly through SongRiffer to know directly what they sound like.
+                            You can listen to your riffs directly through SongRiffer to know directly what they sound like. Your songwriting process will no longer be interrupted by blindly listening to dozens of riffs, you can directly hand pick the one matching your current composition, and know instantly if they can fit or not.
                         </div>
                     </div>
                     <div><img src="assets/preview-riffs-opt.gif" alt="Preview and listen to your riffs" /></div>
                 </section>
-                <div>
+                <div class="future">
                     <h3>More to come...</h3>
-                    <div>SongRiffer will improve and gain more features continuously to help you even more.</div>
+                    <div>SongRiffer will improve and gain more features continuously to help you even more. We've got a bunch of stuff planned that will hopefully make your (and ours!) songwriting process easier. This app is made by musicians like you, so feel free to <a href="mailto:hello@songriffer.com">give your feedback and ideas</a> on how SongRiffer can improve your creative process.</div>
                 </div>
             </div>
         </div>
