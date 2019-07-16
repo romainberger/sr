@@ -29,3 +29,12 @@ document.querySelector('.download-link').addEventListener('click', ev => {
         'event_label': platform,
     })
 })
+
+document.querySelector('.link').addEventListener('click', ev => {
+    const link = ev.target.dataset.link
+
+    gtag('event', 'link', {
+        'event_category': 'click',
+        'event_label': link,
+    })
+})
