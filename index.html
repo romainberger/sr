@@ -5,6 +5,7 @@
     <meta name="description" content="Organize and browse all your ideas hassle-free. The only riff library made for musicians, by musicians, 100% free." />
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name=viewport content="width=device-width,initial-scale=1">
 
     <meta name="google-site-verification" content="NtQTcrRTr-dxfiRPfAz8gPmGaxNsb8saFpQ8dv1lU7M" />
 
@@ -223,11 +224,18 @@
         }
 
         section > div {
-            width: 50%;
             padding: 50px;
         }
 
-        section img {
+        .feature-text {
+            width: 35%;
+        }
+
+        .feature-video {
+            width: 65%;
+        }
+
+        section video {
             width: 100%;
             box-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
         }
@@ -240,7 +248,7 @@
 
         .feature-description {
             font-size: 18px;
-            text-align: justify;
+            line-height: 1.3
         }
 
         .future {
@@ -315,9 +323,21 @@
                 flex-direction: column;
             }
 
+            .header-img-wrapper {
+                width: 90%
+            }
+
             .description,
             .download-link {
                 width: 100%;
+            }
+
+            .feature-text {
+                width: 45%;
+            }
+
+            .feature-video {
+                width: 55%;
             }
         }
 
@@ -334,13 +354,13 @@
                 flex-direction: column-reverse;
             }
 
-            section > div {
+            .feature-text {
                 width: 100%;
-                padding: 25px;
             }
 
-            .feature-img {
+            .feature-video {
                 width: 90%;
+                padding: 25px;
                 margin: 0 auto;
             }
 
@@ -413,7 +433,7 @@
                     </div>
                 </div>
                 <div class="header-img-wrapper">
-                    <img class="header-img" src="assets/screenshot-header.png" alt="Songwriting tool app for Mac and Windows" />
+                    <img class="header-img" src="assets/screenshot-header.png" srcSet="assets/screenshot-header.png 1x, assets/screenshot-header@2x.png 2x" alt="Songwriting tool app for Mac and Windows" />
                 </div>
             </div>
         </header>
@@ -422,7 +442,7 @@
                 <h2>Features</h2>
                 <div class="feature-description-main">No more lost ideas or wasted time listening to yet another <code>idea-v2.wav</code>, SongRiffer will improve your creative process so you can focus on what matters: writing damn good songs.</div>
                 <section>
-                    <div>
+                    <div class="feature-text">
                         <h3 class="title">Organize and quickly browse your riffs and song ideas.</h3>
                         <div class="feature-description">
                             Describing your riff is what will make your creation process faster in the future.
@@ -431,11 +451,15 @@
                             All your ideas and riffs are accessible and easy to browse.
                         </div>
                     </div>
-                    <div class="feature-img"><img src="assets/feature-1-combined-opt.gif" alt="Organize and browse your riffs and ideas" /></div>
+                    <div class="feature-video">
+                        <video autoplay="autoplay" muted playsinline src="assets/feature-1-0.mp4" alt="Organize and browse your riffs and ideas" id="video-feature-1"></video>
+                    </div>
                 </section>
                 <section class="reverse">
-                    <div class="feature-img"><img src="assets/search-opt.gif" alt="Find the perfect songwriting idea" /></div>
-                    <div>
+                    <div class="feature-video">
+                        <video autoplay="autoplay" muted loop playsinline src="assets/feature-2-0.mp4" alt="Find the perfect songwriting idea"></video>
+                    </div>
+                    <div class="feature-text">
                         <h3 class="title">Search for the perfect riff</h3>
                         <div class="feature-description">
                             Stuck by creative block, or just searching for riffs for a new song? SongRiffer makes it easy to filter your riffs so you can find badass ideas you forgot about.
@@ -445,14 +469,16 @@
                     </div>
                 </section>
                 <section>
-                    <div>
+                    <div class="feature-text">
                         <h3 class="title">Preview your riffs and speed up your songwriting</h3>
                         <div class="feature-description">
-                            You can listen to your riffs directly through SongRiffer to know directly what they sound like.
+                            You can listen to your riffs through SongRiffer to know directly what they sound like.
                             Your songwriting process will no longer be interrupted by blindly listening to dozens of riffs, you can directly hand pick the one matching your current composition, and know instantly if they can fit or not.
                         </div>
                     </div>
-                    <div class="feature-img"><img src="assets/preview-riffs-opt.gif" alt="Preview and listen to your riffs" /></div>
+                    <div class="feature-video">
+                        <video autoplay="autoplay" muted playsinline src="assets/feature-3-0.mp4" alt="Preview and listen to your riffs" id="video-feature-3"></video>
+                    </div>
                 </section>
                 <div class="future">
                     <h3>More to come...</h3>
