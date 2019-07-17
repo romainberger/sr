@@ -6,16 +6,16 @@ gtag('js', new Date())
 
 gtag('config', 'UA-142711477-1')
 
-const baseUrl = location.href
+const baseUrl = location.origin
 
-fetch(`${baseUrl}update-mac.json?t=${+new Date()}`)
+fetch(`${baseUrl}/update-mac.json?t=${+new Date()}`)
     .then(res => res.json())
     .then(data => {
         document.querySelector('#version').innerHTML = `version ${data.version} (beta)`
         document.querySelector('#download-mac').href = data.url
     })
 
-fetch(`${baseUrl}update-win.json?t=${+new Date()}`)
+fetch(`${baseUrl}/update-win.json?t=${+new Date()}`)
     .then(res => res.json())
     .then(data => {
         document.querySelector('#download-windows').href = data.url
