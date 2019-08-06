@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="code" />
+    <input type="file" id="file-input" />
+    <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+    <script>
+        var peer = new Peer('songriffer-transfer')
+        let conn
+
+        const codeInput = document.querySelector('#code')
+
+        peer.on('open', function(id) {
+            console.log('My peer ID is: ' + id)
+
+            codeInput.addEventListener('change', ev => {
+                console.log(ev.target.value)
+
+                conn = peer.connect(`SongRiffer-${ev.target.value}`)
+
+                conn.on('open', () => {
+                    conn.send('hello')
+                })
+            })
+        })
+
+        const fileInput = document.querySelector('#file-input')
+
+        fileInput.addEventListener('change', () => {
+            const reader  = new FileReader()
+
+            reader.addEventListener('load', function () {
+                console.log(reader.result)
+                console.log('##### send data')
+
+                if (conn) {
+                    conn.send({
+                        fileName: file.name,
+                        data: reader.result,
+                    })
+                }
+            }, false)
+
+            const file = fileInput.files[0]
+
+            if (file) {
+                reader.readAsArrayBuffer(file)
+            }
+        })
+    </script>
+</body>
+</html>
