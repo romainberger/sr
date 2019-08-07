@@ -4,50 +4,109 @@
     <title></title>
 </head>
 <body>
-    <input type="text" id="code" />
-    <input type="file" id="file-input" />
+    <div><input type="text" id="email" /></div>
+    <div><input type="text" id="code" /></div>
+    <div><input type="file" id="file-input" multiple="multiple" /></div>
     <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
     <script>
         var peer = new Peer('songriffer-transfer')
         let conn
 
+        const emailInput = document.querySelector('#email')
         const codeInput = document.querySelector('#code')
+
+        const getEmailHash = async email => {
+            const encoder = new TextEncoder()
+            const data = encoder.encode(email)
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+            const hashArray = Array.from(new Uint8Array(hashBuffer))
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+
+            return hashHex
+        }
+
+        const connectClient = async (hash, code) => {
+            console.log(`Connect to SongRiffer-${hash}-${code}`)
+
+            conn = peer.connect(`SongRiffer-${hash}-${code}`)
+            conn.on('open', () => {
+                conn.send({
+                    type: 'READY_TO_SEND',
+                    hash,
+                })
+            })
+        }
 
         peer.on('open', function(id) {
             console.log('My peer ID is: ' + id)
 
+            let hash
+            let code
+
+            emailInput.addEventListener('change', async ev => {
+                hash = await getEmailHash(ev.target.value)
+            })
+
             codeInput.addEventListener('change', ev => {
-                console.log(ev.target.value)
-
-                conn = peer.connect(`SongRiffer-${ev.target.value}`)
-
-                conn.on('open', () => {
-                    conn.send('hello')
-                })
+                code = ev.target.value
+                connectClient(hash, code)
             })
         })
 
         const fileInput = document.querySelector('#file-input')
 
-        fileInput.addEventListener('change', () => {
-            const reader  = new FileReader()
+        const sendFile = file => {
+            return new Promise(resolve => {
+                console.log('#### start sending ', file.name)
+                conn.send({
+                    type: 'FILE_TRANSFER_START',
+                    fileName: file.name,
+                })
 
-            reader.addEventListener('load', function () {
-                console.log(reader.result)
-                console.log('##### send data')
+                const reader  = new FileReader()
 
-                if (conn) {
-                    conn.send({
-                        fileName: file.name,
-                        data: reader.result,
-                    })
-                }
-            }, false)
+                reader.addEventListener('load', function () {
+                    console.log(reader.result)
+                    console.log('##### send data')
 
-            const file = fileInput.files[0]
+                    console.log('###### ')
 
-            if (file) {
+                    if (conn) {
+                        console.log('## sending file ', file.name)
+                        conn.send({
+                            type: 'FILE_TRANSFER',
+                            fileName: file.name,
+                            data: reader.result,
+                            fileType: file.type,
+                        })
+                        resolve()
+                    }
+                }, false)
+
                 reader.readAsArrayBuffer(file)
+            })
+        }
+
+        fileInput.addEventListener('change', async () => {
+            const validFiles = Array.from(fileInput.files).filter(file => {
+                if (!file.type.includes('audio')) {
+                    alert(`Cannot transfer file ${file.name} - not an audio file`)
+                    return false
+                }
+
+                return true
+            })
+
+            if (validFiles.length) {
+                conn.send({
+                    type: 'FILE_LIST',
+                    files: validFiles.map(f => f.name),
+                })
+            }
+
+            for (let file of validFiles) {
+                await sendFile(file)
+                console.log('File ', file.name, 'transfered')
             }
         })
     </script>
