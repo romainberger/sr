@@ -9,7 +9,7 @@
     <div><input type="file" id="file-input" multiple="multiple" /></div>
     <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
     <script>
-        var peer = new Peer('songriffer-transfer')
+        var peer = new Peer(`songriffer-transfer-${Date.now()}-${Math.floor(Math.random() * 1000)}`)
         let conn
 
         const emailInput = document.querySelector('#email')
@@ -51,6 +51,10 @@
                 code = ev.target.value
                 connectClient(hash, code)
             })
+        })
+
+        peer.on('error', err => {
+            console.error(err)
         })
 
         const fileInput = document.querySelector('#file-input')
