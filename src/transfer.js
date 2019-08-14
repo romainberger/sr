@@ -1,4 +1,14 @@
+window.dataLayer = window.dataLayer || []
+function gtag() {
+    dataLayer.push(arguments)
+}
+gtag('js', new Date())
 
+gtag('config', 'UA-142711477-1')
+
+const trackEvent = (name, params) => {
+    gtag('event', name, params)
+}
 
 // peer.on('open', function(id) {
 //     console.log('My peer ID is: ' + id)
@@ -77,6 +87,10 @@ class App extends React.Component {
 
     onAuthChange = user => {
         if (user) {
+            trackEvent('auth', {
+                'event_category': 'auth',
+                'event_label': 'sign-in',
+            })
             this.getEmailHash(user.email).then(emailHash => {
                 this.setState({
                     appReady: true,
@@ -96,6 +110,10 @@ class App extends React.Component {
     }
 
     signOut = () => {
+        trackEvent('auth', {
+            'event_category': 'auth',
+            'event_label': 'sign-out',
+        })
         Firebase.signOut()
     }
 
@@ -131,6 +149,11 @@ class App extends React.Component {
 
         this.conn = peer.connect(`SongRiffer-${emailHash}-${code}`)
         this.conn.on('open', () => {
+            trackEvent('transfer', {
+                'event_category': 'transfer',
+                'event_label': 'connected',
+            })
+
             this.conn.send({
                 type: 'READY_TO_SEND',
                 hash: emailHash,
@@ -152,6 +175,11 @@ class App extends React.Component {
         })
 
         if (validFiles.length) {
+            trackEvent('transfer', {
+                'event_category': 'transfer',
+                'event_label': 'start-transfer',
+            })
+
             this.conn.send({
                 type: 'FILE_LIST',
                 files: validFiles.map(f => f.name),
