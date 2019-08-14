@@ -1,0 +1,21 @@
+{
+  "name": "sr",
+  "version": "0.5.1",
+  "repository": "git@github.com:romainberger/sr.git",
+  "author": "Romain Berger <romain@romainberger.com>",
+  "scripts": {
+    "start": "webpack --config webpack.config.js --watch"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "firebase": "^6.3.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  }
+}
