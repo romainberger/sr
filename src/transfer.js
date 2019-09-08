@@ -32,6 +32,7 @@ class AuthForm extends React.Component {
     state = {
         email: '',
         password: '',
+        pending: false,
     }
 
     onEmailChange = ev => {
@@ -44,6 +45,7 @@ class AuthForm extends React.Component {
 
     onSubmit = ev => {
         ev.preventDefault()
+        this.setState({ pending: true })
 
         Firebase.signInWithEmailPassword(this.state.email, this.state.password)
     }
@@ -52,7 +54,12 @@ class AuthForm extends React.Component {
         const {
             email,
             password,
+            pending,
         } = this.state
+
+        // todo pending state
+        // todo errors
+        // todo sign up
 
         return (
             <form className="transfer-auth" onSubmit={ this.onSubmit }>
@@ -121,7 +128,7 @@ class App extends React.Component {
     }
 
     onCodeChange = ev => {
-        const code = ev.target.value
+        const code = ev.target.value.toUpperCase()
 
         if (code !== this.state.code) {
             this.setState({ code }, () => {
@@ -276,7 +283,7 @@ class App extends React.Component {
                     ) : (
                         <div>
                             <div>Enter your code from the SongRiffer app to start transfering files:</div>
-                            <input type="text" onChange={ this.onCodeChange } maxLength={ 4 } value={ code } />
+                            <input type="text" onChange={ this.onCodeChange } maxLength={ 4 } value={ code } autoFocus />
                         </div>
                     )
                 }

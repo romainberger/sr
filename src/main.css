@@ -393,7 +393,7 @@ footer {
     margin-bottom: 25px;
 }
 
-.transfer-auth input {
+.transfer-root input {
     display: inline-block;
     background: transparent;
     outline: none;
@@ -408,11 +408,27 @@ footer {
     transition: border ease 0.1s;
 }
 
-.transfer-auth input::placeholder {
+.transfer-root input::placeholder {
     color: #dedede;
     opacity: 0.4;
 }
 
-.transfer-auth input:focus {
+.transfer-root input:focus {
     border-bottom: 1px solid #8086FF;
+}
+
+.transfer-root button {
+    outline: none;
+    background: #3B4096;
+    color: #dedede;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    transition: background ease 0.1s;
+}
+
+.transfer-auth button:hover {
+    background: #a389c9;
 }
