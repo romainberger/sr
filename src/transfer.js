@@ -55,7 +55,10 @@ class AuthForm extends React.Component {
         } = this.state
 
         return (
-            <form onSubmit={ this.onSubmit }>
+            <form className="transfer-auth" onSubmit={ this.onSubmit }>
+                <div className="auth-title">
+                    Please login or create an account to use start transfering files to your SongRiffer app.
+                </div>
                 <div>
                     <input type="email" placeholder="Email" onChange={ this.onEmailChange } value={ email } />
                 </div>
@@ -243,7 +246,7 @@ class App extends React.Component {
         } = this.state
 
         if (!appReady) {
-            return <div>loading...</div>
+            return <div>Loading...</div>
         }
 
         if (!isAuthenticated) {
@@ -283,4 +286,23 @@ class App extends React.Component {
     }
 }
 
-render(<App />, document.querySelector('#root'))
+const Header = () =>
+    <div className="transfer-header">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo transfer-logo">
+          <use xlinkHref="#e"/>
+        </svg>
+        <div>Mobile Transfer</div>
+    </div>
+
+class AppWrapper extends React.Component {
+    render() {
+        return (
+            <div className="transfer-wrapper">
+                <Header />
+                <App />
+            </div>
+        )
+    }
+}
+
+render(<AppWrapper />, document.querySelector('#root'))
