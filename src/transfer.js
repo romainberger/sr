@@ -28,38 +28,77 @@ const Firebase = require('./Firebase')
 
 const peer = new Peer(`songriffer-transfer-${Date.now()}-${Math.floor(Math.random() * 1000)}`)
 
+const AUTH_ERRORS = {
+    'auth/user-not-found': 'We could not find your account, please check your information or create a new account.',
+    'auth/wrong-password': 'Invalid password.',
+}
+
 class AuthForm extends React.Component {
     state = {
+        confirmPassword: '',
         email: '',
+        error: null,
+        formType: 'sign-in',
         password: '',
         pending: false,
     }
 
     onEmailChange = ev => {
-        this.setState({ email: ev.target.value })
+        this.setState({
+            email: ev.target.value,
+            error: null,
+        })
     }
 
     onPasswordChange = ev => {
-        this.setState({ password: ev.target.value })
+        this.setState({
+            error: null,
+            password: ev.target.value,
+        })
+    }
+
+    onConfirmPasswordChange = ev => {
+        this.setState({
+            error: null,
+            confirmPassword: ev.target.value,
+        })
     }
 
     onSubmit = ev => {
+        // todo sign in / up depending on form type
         ev.preventDefault()
         this.setState({ pending: true })
 
-        Firebase.signInWithEmailPassword(this.state.email, this.state.password)
+        if (this.state.formType === 'sign-in') {
+            Firebase.signInWithEmailPassword(this.state.email, this.state.password)
+                .catch(error => {
+                    this.setState({ error })
+                })
+        }
+        else {
+            // todo check password and confirmation match
+            Firebase.signUpWithEmailPassword(this.state.email, this.state.password)
+                .catch(error => {
+                    this.setState({ error })
+                })
+        }
+    }
+
+    switchForm = () => {
+        this.setState({ formType: this.state.formType === 'sign-in' ? 'sign-up' : 'sign-in' })
     }
 
     render() {
         const {
+            confirmPassword,
             email,
+            error,
+            formType,
             password,
             pending,
         } = this.state
 
-        // todo pending state
         // todo errors
-        // todo sign up
 
         return (
             <form className="transfer-auth" onSubmit={ this.onSubmit }>
@@ -72,8 +111,27 @@ class AuthForm extends React.Component {
                 <div>
                     <input type="password" placeholder="Password" onChange={ this.onPasswordChange } value={ password } />
                 </div>
+                {
+                    formType === 'sign-up' ? (
+                        <div>
+                            <input type="password" placeholder="Confirm Password" onChange={ this.onConfirmPasswordChange } value={ confirmPassword } />
+                        </div>
+                    ) : null
+                }
                 <div>
-                    <button>Sign in</button>
+                    <button>{ formType === 'sign-in' ? 'Log in' : 'Create an account' }</button>
+                </div>
+                {
+                    error ? (
+                        <div>
+                            { AUTH_ERRORS[error.code] ? AUTH_ERRORS[error.code] : 'An error occured, please try again.' }
+                        </div>
+                    ) : null
+                }
+                <div className="form-type-switch" onClick={ this.switchForm }>
+                    {
+                        formType === 'sign-in' ? 'Create an account' : 'Log in with an existing account'
+                    }
                 </div>
             </form>
         )
@@ -287,7 +345,7 @@ class App extends React.Component {
                         </div>
                     )
                 }
-                <button onClick={ this.signOut }>Sign out</button>
+                <button onClick={ this.signOut }>Log out</button>
             </div>
         )
     }
@@ -301,15 +359,10 @@ const Header = () =>
         <div>Mobile Transfer</div>
     </div>
 
-class AppWrapper extends React.Component {
-    render() {
-        return (
-            <div className="transfer-wrapper">
-                <Header />
-                <App />
-            </div>
-        )
-    }
-}
+const AppWrapper = () =>
+    <div className="transfer-wrapper">
+        <Header />
+        <App />
+    </div>
 
 render(<AppWrapper />, document.querySelector('#root'))

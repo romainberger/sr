@@ -432,3 +432,10 @@ footer {
 .transfer-auth button:hover {
     background: #a389c9;
 }
+
+.form-type-switch {
+    margin-top: 40px;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+}
