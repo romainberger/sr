@@ -36,6 +36,7 @@ const AUTH_ERRORS = {
 class AuthForm extends React.Component {
     state = {
         confirmPassword: '',
+        confirmPasswordError: false,
         email: '',
         error: null,
         formType: 'sign-in',
@@ -45,6 +46,7 @@ class AuthForm extends React.Component {
 
     onEmailChange = ev => {
         this.setState({
+            confirmPasswordError: false,
             email: ev.target.value,
             error: null,
         })
@@ -52,6 +54,7 @@ class AuthForm extends React.Component {
 
     onPasswordChange = ev => {
         this.setState({
+            confirmPasswordError: false,
             error: null,
             password: ev.target.value,
         })
@@ -59,13 +62,13 @@ class AuthForm extends React.Component {
 
     onConfirmPasswordChange = ev => {
         this.setState({
+            confirmPasswordError: false,
             error: null,
             confirmPassword: ev.target.value,
         })
     }
 
     onSubmit = ev => {
-        // todo sign in / up depending on form type
         ev.preventDefault()
         this.setState({ pending: true })
 
@@ -76,7 +79,11 @@ class AuthForm extends React.Component {
                 })
         }
         else {
-            // todo check password and confirmation match
+            if (this.state.password !== this.state.confirmPassword) {
+                this.setState({ confirmPasswordError: true })
+                return
+            }
+
             Firebase.signUpWithEmailPassword(this.state.email, this.state.password)
                 .catch(error => {
                     this.setState({ error })
@@ -91,6 +98,7 @@ class AuthForm extends React.Component {
     render() {
         const {
             confirmPassword,
+            confirmPasswordError,
             email,
             error,
             formType,
@@ -98,36 +106,39 @@ class AuthForm extends React.Component {
             pending,
         } = this.state
 
-        // todo errors
-
         return (
             <form className="transfer-auth" onSubmit={ this.onSubmit }>
                 <div className="auth-title">
                     Please login or create an account to use start transfering files to your SongRiffer app.
                 </div>
                 <div>
-                    <input type="email" placeholder="Email" onChange={ this.onEmailChange } value={ email } />
+                    <input type="email" placeholder="Email" onChange={ this.onEmailChange } value={ email } required />
                 </div>
                 <div>
-                    <input type="password" placeholder="Password" onChange={ this.onPasswordChange } value={ password } />
+                    <input type="password" placeholder="Password" onChange={ this.onPasswordChange } value={ password } required />
                 </div>
                 {
                     formType === 'sign-up' ? (
                         <div>
-                            <input type="password" placeholder="Confirm Password" onChange={ this.onConfirmPasswordChange } value={ confirmPassword } />
+                            <input type="password" placeholder="Confirm Password" onChange={ this.onConfirmPasswordChange } value={ confirmPassword } required />
+                            {
+                                confirmPasswordError ? (
+                                    <div className="auth-error">Your password and your confirmation password do not match.</div>
+                                ) : null
+                            }
+                        </div>
+                    ) : null
+                }
+                {
+                    error ? (
+                        <div className="auth-error">
+                            { AUTH_ERRORS[error.code] ? AUTH_ERRORS[error.code] : 'An error occured, please try again.' }
                         </div>
                     ) : null
                 }
                 <div>
                     <button>{ formType === 'sign-in' ? 'Log in' : 'Create an account' }</button>
                 </div>
-                {
-                    error ? (
-                        <div>
-                            { AUTH_ERRORS[error.code] ? AUTH_ERRORS[error.code] : 'An error occured, please try again.' }
-                        </div>
-                    ) : null
-                }
                 <div className="form-type-switch" onClick={ this.switchForm }>
                     {
                         formType === 'sign-in' ? 'Create an account' : 'Log in with an existing account'
@@ -319,11 +330,11 @@ class App extends React.Component {
         }
 
         return (
-            <div>
+            <div className="transfer-file-wrapper">
                 {
                     connected ? (
                         <div>
-                            <div>Select the files to transfer:</div>
+                            <div>Select the files to transfer</div>
                             {
                                 files.length ? (
                                     <div>
@@ -341,11 +352,18 @@ class App extends React.Component {
                     ) : (
                         <div>
                             <div>Enter your code from the SongRiffer app to start transfering files:</div>
-                            <input type="text" onChange={ this.onCodeChange } maxLength={ 4 } value={ code } autoFocus />
+                            <input
+                                className="code-input"
+                                type="text"
+                                onChange={ this.onCodeChange }
+                                maxLength={ 4 }
+                                value={ code }
+                                autoFocus
+                            />
                         </div>
                     )
                 }
-                <button onClick={ this.signOut }>Log out</button>
+                <button className="secondary-button" onClick={ this.signOut }>Log out</button>
             </div>
         )
     }

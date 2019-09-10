@@ -29,7 +29,7 @@ class Firebase {
                 .then(resolve)
                 .catch(err => {
                     console.error('########### Error with sign up', err)
-                    reject(err.message)
+                    reject(err)
                 })
         })
     }
@@ -40,7 +40,7 @@ class Firebase {
                 .then(resolve)
                 .catch(err => {
                     console.error('########### Error with sign in', err)
-                    reject(err.message)
+                    reject(err)
                 })
         })
     }
