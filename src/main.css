@@ -417,7 +417,12 @@ footer {
     border-bottom: 1px solid #8086FF;
 }
 
-.transfer-root button {
+.transfer-root .files-input {
+    display: none;
+}
+
+.transfer-root button,
+.transfer-root .files-input-label {
     outline: none;
     background: #3B4096;
     color: #dedede;
@@ -429,12 +434,22 @@ footer {
     transition: background ease 0.1s;
 }
 
+.transfer-root .files-input-label {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin: 40px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
 .transfer-root .secondary-button {
     border: 1px solid #555;
     background: none;
 }
 
-.transfer-auth button:hover {
+.transfer-auth button:hover,
+.transfer-root .files-input-label:hover {
     background: #a389c9;
 }
 
@@ -453,6 +468,11 @@ footer {
 
 .transfer-file-wrapper {
     max-width: 400px;
+}
+
+.transfer-root .code-input-wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .transfer-root .code-input {

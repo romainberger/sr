@@ -345,21 +345,26 @@ class App extends React.Component {
                                         }
                                     </div>
                                 ) : (
-                                    <input type="file" multiple="multiple" onChange={ this.onFileChange } ref={ this.fileInput } />
+                                    <label className="files-input-label">
+                                        Select files
+                                        <input className="files-input" type="file" multiple="multiple" onChange={ this.onFileChange } ref={ this.fileInput } />
+                                    </label>
                                 )
                             }
                         </div>
                     ) : (
                         <div>
                             <div>Enter your code from the SongRiffer app to start transfering files:</div>
-                            <input
-                                className="code-input"
-                                type="text"
-                                onChange={ this.onCodeChange }
-                                maxLength={ 4 }
-                                value={ code }
-                                autoFocus
-                            />
+                            <div className="code-input-wrapper">
+                                <input
+                                    className="code-input"
+                                    type="text"
+                                    onChange={ this.onCodeChange }
+                                    maxLength={ 4 }
+                                    value={ code }
+                                    autoFocus
+                                />
+                            </div>
                         </div>
                     )
                 }
