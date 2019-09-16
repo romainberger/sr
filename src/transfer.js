@@ -330,31 +330,34 @@ class App extends React.Component {
         }
 
         return (
-            <div className="transfer-file-wrapper">
+            <div>
                 {
                     connected ? (
                         <div>
-                            <div>Select the files to transfer</div>
                             {
                                 files.length ? (
-                                    <div>
+                                    <div className="transfer-file-list">
+                                        <div>Transfering files:</div>
                                         {
                                             files.map(file => (
-                                                <div key={ file.name }>{ file.name }</div>
+                                                <div className="transfer-file" key={ file.name }>{ file.name }</div>
                                             ))
                                         }
                                     </div>
                                 ) : (
-                                    <label className="files-input-label">
-                                        Select files
-                                        <input className="files-input" type="file" multiple="multiple" onChange={ this.onFileChange } ref={ this.fileInput } />
-                                    </label>
+                                    <div>
+                                        <div>Select the files to transfer</div>
+                                        <label className="files-input-label">
+                                            Select files
+                                            <input className="files-input" type="file" multiple="multiple" onChange={ this.onFileChange } ref={ this.fileInput } />
+                                        </label>
+                                    </div>
                                 )
                             }
                         </div>
                     ) : (
-                        <div>
-                            <div>Enter your code from the SongRiffer app to start transfering files:</div>
+                        <div className="transfer-file-wrapper">
+                            <div className="code-input-text">Enter your code from the SongRiffer app to start transfering files:</div>
                             <div className="code-input-wrapper">
                                 <input
                                     className="code-input"
@@ -368,7 +371,9 @@ class App extends React.Component {
                         </div>
                     )
                 }
-                <button className="secondary-button" onClick={ this.signOut }>Log out</button>
+                <div className="log-out-wrapper">
+                    <button className="secondary-button" onClick={ this.signOut }>Log out</button>
+                </div>
             </div>
         )
     }
@@ -379,7 +384,6 @@ const Header = () =>
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo transfer-logo">
           <use xlinkHref="#e"/>
         </svg>
-        <div>Mobile Transfer</div>
     </div>
 
 const AppWrapper = () =>

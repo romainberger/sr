@@ -393,6 +393,12 @@ footer {
     margin-bottom: 25px;
 }
 
+.log-out-wrapper {
+    display: flex;
+    margin-top: 110px;
+    justify-content: center;
+}
+
 .transfer-root input {
     display: inline-block;
     background: transparent;
@@ -475,6 +481,10 @@ footer {
     justify-content: center;
 }
 
+.transfer-root .code-input-text {
+    margin: 40px 0;
+}
+
 .transfer-root .code-input {
     max-width: 100px;
     background: rgba(255, 255, 255, 0.2);
@@ -484,4 +494,11 @@ footer {
 
 .transfer-root .code-input:focus {
     border: none;
+}
+
+.transfer-file {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
 }
