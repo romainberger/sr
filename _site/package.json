@@ -5,7 +5,7 @@
   "author": "Romain Berger <romain@romainberger.com>",
   "scripts": {
     "start": "webpack --config webpack.config.js --watch",
-    "server": "python -m SimpleHTTPServer"
+    "server": "bundle exec jekyll serve"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
