@@ -5,7 +5,10 @@
   "author": "Romain Berger <romain@romainberger.com>",
   "scripts": {
     "start": "webpack --config webpack.config.js --watch",
-    "server": "bundle exec jekyll serve"
+    "server": "bundle exec jekyll serve",
+    "clean": "rm -rf build",
+    "build": "yarn clean && yarn build-webpack",
+    "build-webpack": "NODE_ENV=production webpack --config webpack.config.js"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
