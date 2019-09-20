@@ -1,8 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 
-const DATA_FILE_PATH = path.join(__dirname, '_data/assets.json')
+const DATA_ASSETS_FILE_PATH = path.join(__dirname, '_data/assets.json')
 
 const NODE_ENV = process.env.NODE_ENV || "development"
 
@@ -27,11 +30,29 @@ module.exports = {
                 ],
                 exclude: /node_modules/,
             },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // // you can specify a publicPath here
+                            // // by default it uses publicPath in webpackOptions.output
+                            // publicPath: '../',
+                            // hmr: process.env.NODE_ENV === 'development',
+                        },
+                    },
+                    'css-loader',
+                ],
+            },
         ],
     },
     plugins: [
         new webpack.DefinePlugin({
             __DEV__: NODE_ENV === "development",
+        }),
+        new MiniCssExtractPlugin({
+            filename: NODE_ENV === 'production' ? 'main-[chunkhash].css' : 'main.css',
         }),
         {
             apply: (compiler) => {
@@ -43,7 +64,7 @@ module.exports = {
                         return acc
                     }, {})
 
-                    fs.writeFile(DATA_FILE_PATH, JSON.stringify(assets, null, 2), err => {
+                    fs.writeFile(DATA_ASSETS_FILE_PATH, JSON.stringify(assets, null, 2), err => {
                         if (err) {
                             console.error('Error writing asset file', err)
                             return
@@ -55,4 +76,10 @@ module.exports = {
             },
         },
     ],
+    optimization: {
+        minimizer: [
+            new TerserJSPlugin({}),
+            new OptimizeCSSAssetsPlugin({})
+        ],
+    },
 }
