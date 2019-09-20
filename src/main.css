@@ -352,6 +352,24 @@ footer {
     }
 }
 
+/*****************************
+          Legal
+******************************/
+
+.legal-content {
+    padding: 0 30px;
+}
+
+.legal-content h2 {
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.legal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
 
 /*****************************
           Tranfer

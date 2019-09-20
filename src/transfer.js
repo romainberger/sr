@@ -1,15 +1,3 @@
-window.dataLayer = window.dataLayer || []
-function gtag() {
-    dataLayer.push(arguments)
-}
-gtag('js', new Date())
-
-gtag('config', 'UA-142711477-1')
-
-const trackEvent = (name, params) => {
-    gtag('event', name, params)
-}
-
 // peer.on('open', function(id) {
 //     console.log('My peer ID is: ' + id)
 

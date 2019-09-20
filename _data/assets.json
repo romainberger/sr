@@ -1,5 +1,5 @@
 {
-  "main": "build/main-6c0db31aa687729ddf19.css",
-  "index": "build/index-6c0db31aa687729ddf19.js",
-  "transfer": "build/transfer-8da7d10df9207c6dcb5a.js.LICENSE"
+  "main": "build/main.css",
+  "index": "build/index.js",
+  "transfer": "build/transfer.js"
 }

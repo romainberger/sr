@@ -1,13 +1,5 @@
 require('./main.css')
 
-window.dataLayer = window.dataLayer || []
-function gtag() {
-    dataLayer.push(arguments)
-}
-gtag('js', new Date())
-
-gtag('config', 'UA-142711477-1')
-
 const baseUrl = location.origin
 
 const getElement = (selector, cb) => {
@@ -39,7 +31,7 @@ getElement('.download-link', el => {
     el.addEventListener('click', ev => {
         const platform = ev.target.dataset.platform
 
-        gtag('event', 'download', {
+        trackEvent('download', {
             'event_category': 'download',
             'event_label': platform,
         })
@@ -50,7 +42,7 @@ getElement('.link', el => {
     el.addEventListener('click', ev => {
         const link = ev.target.dataset.link
 
-        gtag('event', 'link', {
+        trackEvent('link', {
             'event_category': 'click',
             'event_label': link,
         })
