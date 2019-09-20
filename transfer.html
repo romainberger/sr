@@ -62,6 +62,20 @@ title: Mobile Transfer | Songriffer
       </defs>
     </svg>
     <div id="root" class="transfer-root"></div>
+    {% include footer.html %}
+    <script>
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        gtag('js', new Date())
+
+        gtag('config', 'UA-142711477-1')
+
+        const trackEvent = (name, params) => {
+            gtag('event', name, params)
+        }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142711477-1"></script>
     <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
     <script src="{{ site.data.assets.transfer }}"></script>
