@@ -28,7 +28,7 @@ title: Mobile Transfer | Songriffer
     <meta name="twitter:description" content="Organize and browse all your ideas hassle-free. The only riff library app made for musicians, by musicians, 100% free. Download for Mac and Windows." />
     <meta name="twitter:image" content="https://songriffer.com/assets/screenshot-header.png" />
 
-    <link rel="stylesheet" type="text/css" href="{{ site.data.assets.main }}">
+    <link rel="stylesheet" type="text/css" href="/{{ site.data.assets.main }}">
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="def-logo">
@@ -63,21 +63,8 @@ title: Mobile Transfer | Songriffer
     </svg>
     <div id="root" class="transfer-root"></div>
     {% include footer.html %}
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() {
-            dataLayer.push(arguments)
-        }
-        gtag('js', new Date())
-
-        gtag('config', 'UA-142711477-1')
-
-        const trackEvent = (name, params) => {
-            gtag('event', name, params)
-        }
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142711477-1"></script>
+    {% include script.html %}
     <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
-    <script src="{{ site.data.assets.transfer }}"></script>
+    <script src="/{{ site.data.assets.transfer }}"></script>
 </body>
 </html>

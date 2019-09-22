@@ -31,7 +31,7 @@
     <link rel="preload" href="assets/feature-3-0.mp4" as="video">
     <link rel="preload" href="assets/feature-3-1.mp4" as="video">
 
-    <link rel="stylesheet" type="text/css" href="{{ site.data.assets.main }}">
+    <link rel="stylesheet" type="text/css" href="/{{ site.data.assets.main }}">
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="def-logo">
@@ -67,20 +67,7 @@
     <div>
         {{ content }}
     </div>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142711477-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() {
-            dataLayer.push(arguments)
-        }
-        gtag('js', new Date())
-
-        gtag('config', 'UA-142711477-1')
-
-        const trackEvent = (name, params) => {
-            gtag('event', name, params)
-        }
-    </script>
-    <script src="{{ site.data.assets.index }}"></script>
+    {% include script.html %}
+    <script src="/{{ site.data.assets.index }}"></script>
 </body>
 </html>
