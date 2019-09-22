@@ -424,6 +424,11 @@ footer {
     align-items: center;
 }
 
+.log-out-text {
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+
 .transfer-root input {
     display: inline-block;
     background: transparent;
@@ -480,7 +485,8 @@ footer {
 }
 
 .transfer-auth button:hover,
-.transfer-root .files-input-label:hover {
+.transfer-root .files-input-label:hover,
+.transfer-root .secondary-button:hover {
     background: #a389c9;
 }
 

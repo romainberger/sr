@@ -145,6 +145,7 @@ class App extends React.Component {
         code: '',
         connected: false,
         files: [],
+        fileState: [],
         isAuthenticated: false,
         user: null,
     }
@@ -241,6 +242,15 @@ class App extends React.Component {
             return true
         })
 
+        this.setState({
+            fileState: new Array(validFiles.length).fill(0).map(file => {
+                return {
+                    transfering: false,
+                    transfered: false,
+                }
+            })
+        })
+
         if (validFiles.length) {
             trackEvent('transfer', {
                 'event_category': 'transfer',
@@ -273,10 +283,22 @@ class App extends React.Component {
             fileName: file.name,
         })
 
+        this.setState({
+            fileState: this.state.fileState.map((_file, _index) => {
+                if (_index === index) {
+                    return {
+                        ..._file,
+                        transfering: true,
+                    }
+                }
+
+                return _file
+            }),
+        })
+
         const reader  = new FileReader()
 
         reader.addEventListener('load', () => {
-            console.log(reader.result)
             console.log('##### send data')
 
             console.log('## sending file ', file.name)
@@ -287,7 +309,21 @@ class App extends React.Component {
                 fileType: file.type,
             })
 
-            console.log('## file', file.name, 'transfered')
+            console.log('## file transfered')
+            this.setState({
+                fileState: this.state.fileState.map((_file, _index) => {
+                    if (_index === index) {
+                        return {
+                            ..._file,
+                            transfering: false,
+                            transfered: true,
+                        }
+                    }
+
+                    return _file
+                }),
+            })
+
             if (files[index + 1]) {
                 this.sendFile(files, index + 1)
             }
@@ -306,6 +342,7 @@ class App extends React.Component {
             code,
             connected,
             files,
+            fileState,
             isAuthenticated,
             user,
         } = this.state
@@ -328,14 +365,28 @@ class App extends React.Component {
                                     <div className="transfer-file-list">
                                         <div>Transfering files:</div>
                                         {
-                                            files.map(file => (
-                                                <div className="transfer-file" key={ file.name }>{ file.name }</div>
+                                            files.map((file, index) => (
+                                                <div className="transfer-file" key={ file.name }>
+                                                    { file.name }
+                                                    {
+                                                        fileState[index] ? (
+                                                            <React.Fragment>
+                                                                {
+                                                                    fileState[index].transfering ? <i>transfering...</i> : null
+                                                                }
+                                                                {
+                                                                    fileState[index].transfered ? <span>transfered ✔</span> : null
+                                                                }
+                                                            </React.Fragment>
+                                                        ) : null
+                                                    }
+                                                </div>
                                             ))
                                         }
                                     </div>
                                 ) : (
                                     <div>
-                                        <div>Select the files to transfer</div>
+                                        <div>Select the files to transfer:</div>
                                         <label className="files-input-label">
                                             Select files
                                             <input className="files-input" type="file" multiple="multiple" onChange={ this.onFileChange } ref={ this.fileInput } />
@@ -361,7 +412,7 @@ class App extends React.Component {
                     )
                 }
                 <div className="log-out-wrapper">
-                    <div>You are logged in with { user.email }</div>
+                    <div className="log-out-text">You are logged in with { user.email }</div>
                     <button className="secondary-button" onClick={ this.signOut }>Log out</button>
                 </div>
             </div>
