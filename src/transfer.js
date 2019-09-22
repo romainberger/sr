@@ -307,6 +307,7 @@ class App extends React.Component {
             connected,
             files,
             isAuthenticated,
+            user,
         } = this.state
 
         if (!appReady) {
@@ -360,6 +361,7 @@ class App extends React.Component {
                     )
                 }
                 <div className="log-out-wrapper">
+                    <div>You are logged in with { user.email }</div>
                     <button className="secondary-button" onClick={ this.signOut }>Log out</button>
                 </div>
             </div>
