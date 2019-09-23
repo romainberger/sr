@@ -2,30 +2,8 @@
 layout: default
 ---
 
-<header>
-    <div class="header-content">
-        <div class="description">
-            <h1>SongRiffer</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo">
-              <use xlink:href="#e"/>
-            </svg>
+{% include header.html %}
 
-            <div class="download-block">
-                <div class="subtitle">Organize and browse all your ideas hassle-free.</div>
-                <div class="subtitle-second">The only riff library made for musicians, by musicians, 100% free.</div>
-                <div class="download-title">Download</div>
-                <div class="version" id="version"></div>
-                <div class="download-links">
-                    <a class="download-link" href="#" download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">Mac</a>
-                    <a class="download-link" href="#" download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">Windows</a>
-                </div>
-            </div>
-        </div>
-        <div class="header-img-wrapper">
-            <img class="header-img" src="assets/screenshot-header.png" srcSet="assets/screenshot-header.png 1x, assets/screenshot-header@2x.png 2x" alt="Songwriting tool app for Mac and Windows" />
-        </div>
-    </div>
-</header>
 <div class="content">
     <div>
         <h2>Features</h2>
@@ -41,12 +19,12 @@ layout: default
                 </div>
             </div>
             <div class="feature-video">
-                <video autoplay="autoplay" muted playsinline src="assets/feature-1-0.mp4" alt="Organize and browse your riffs and ideas" id="video-feature-1"></video>
+                <video autoplay="autoplay" muted playsinline src="/assets/feature-1-0.mp4" alt="Organize and browse your riffs and ideas" id="video-feature-1"></video>
             </div>
         </section>
         <section class="reverse">
             <div class="feature-video">
-                <video autoplay="autoplay" muted loop playsinline src="assets/feature-2-0.mp4" alt="Find the perfect songwriting idea"></video>
+                <video autoplay="autoplay" muted loop playsinline src="/assets/feature-2-0.mp4" alt="Find the perfect songwriting idea"></video>
             </div>
             <div class="feature-text">
                 <h3 class="title">Search for the perfect riff</h3>
@@ -66,7 +44,7 @@ layout: default
                 </div>
             </div>
             <div class="feature-video">
-                <video autoplay="autoplay" muted playsinline src="assets/feature-3-0.mp4" alt="Preview and listen to your riffs" id="video-feature-3"></video>
+                <video autoplay="autoplay" muted playsinline src="/assets/feature-3-0.mp4" alt="Preview and listen to your riffs" id="video-feature-3"></video>
             </div>
         </section>
         <div class="future">
