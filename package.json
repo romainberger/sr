@@ -8,7 +8,8 @@
     "server": "bundle exec jekyll serve",
     "clean": "rm -rf build",
     "build": "yarn clean && yarn build-webpack",
-    "build-webpack": "NODE_ENV=production webpack --config webpack.config.js"
+    "build-webpack": "NODE_ENV=production webpack --config webpack.config.js",
+    "pre-commit": "./scripts/pre-commit"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -25,5 +26,14 @@
     "terser-webpack-plugin": "2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6"
-  }
+  },
+  "devDependencies": {
+    "husky": "3.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
+  "license": "MIT"
 }
