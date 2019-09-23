@@ -4,6 +4,34 @@ layout: default
 
 {% include header.html %}
 
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SongRiffer",
+        "applicationCategory": "Multimedia",
+        "downloadUrl": "https://songriffer.com",
+        "operatingSystem": "OSX, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "url": "https://songriffer.com",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "email": "hello@songriffer.com",
+                    "url": "https://songriffer.com",
+                    "contactType": "customer service"
+                }
+            ]
+        }
+    }
+</script>
+
 <div class="content">
     <div>
         <h2>Features</h2>
@@ -47,6 +75,14 @@ layout: default
                 <video autoplay="autoplay" muted playsinline src="/assets/feature-3-0.mp4" alt="Preview and listen to your riffs" id="video-feature-3"></video>
             </div>
         </section>
+        <div class="features-list">
+            <div class="features-item">tags and rating to organize your riffs and ideas and browse them easily</div>
+            <div class="features-item">tempo, duration and time signature to know quickly if it fits what you need</div>
+            <div class="features-item">comments to write down ideas and notes about your work</div>
+            <div class="features-item">built-in player to preview your riffs immediately</div>
+            <div class="features-item">advanced search to dig deeper in your riff library and find the one that will help your songwriting</div>
+        <div class="features-item">more features and improvement to come continuously to keep make your songwriting experience a breeze</div>
+        </div>
         <div class="future">
             <h3>More to come...</h3>
             <div>SongRiffer will improve and gain more features continuously to help you even more. We've got a bunch of stuff planned that will hopefully make your (and ours!) songwriting process easier. This app is made by musicians like you, so feel free to <a href="mailto:hello@songriffer.com">give your feedback and ideas</a> on how SongRiffer can improve your creative process.</div>
