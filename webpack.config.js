@@ -58,6 +58,10 @@ module.exports = {
             apply: (compiler) => {
                 compiler.hooks.afterEmit.tap('AfterEmitPlugin', compilation => {
                     const assets = Object.keys(compilation.assets).reduce((acc, asset) => {
+                        if (asset.endsWith('LICENSE')) {
+                            return acc
+                        }
+
                         const name = asset.split('-')[0].split('.')[0]
                         acc[name] = `build/${asset}`
 
