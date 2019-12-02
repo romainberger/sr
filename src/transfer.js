@@ -235,7 +235,13 @@ class App extends React.Component {
     onFileChange = ev => {
         const validFiles = Array.from(this.fileInput.current.files).filter(file => {
             if (!file.type.includes('audio')) {
-                alert(`Cannot transfer file ${file.name} - not an audio file`)
+                const message = [
+                    `Cannot transfer file ${file.name} - not an audio file`
+                ]
+                if (file.type && file.type.length) {
+                    message.push(`Invalid Type: ${file.type}`)
+                }
+                alert(message.join('\n'))
                 return false
             }
 
