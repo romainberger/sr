@@ -248,15 +248,6 @@ class App extends React.Component {
             return true
         })
 
-        this.setState({
-            fileState: new Array(validFiles.length).fill(0).map(file => {
-                return {
-                    transfering: false,
-                    transfered: false,
-                }
-            })
-        })
-
         if (validFiles.length) {
             trackEvent('transfer', {
                 'event_category': 'transfer',
@@ -271,8 +262,13 @@ class App extends React.Component {
 
         this.setState({
             files: validFiles,
+            fileState: validFiles.map(file => ({
+                transfering: false,
+                transfered: false,
+            })),
+        }, () => {
+            this.sendFile(validFiles, 0)
         })
-        this.sendFile(validFiles, 0)
     }
 
     sendFile = (files, index) => {
@@ -338,6 +334,18 @@ class App extends React.Component {
         reader.readAsArrayBuffer(file)
     }
 
+    getFileStatusClass = fileStatus => {
+        if (fileStatus.transfered) {
+            return 'transfer-file-transfered'
+        }
+
+        if (fileStatus.transfering) {
+            'transfer-file-transfering'
+        }
+
+        return ''
+    }
+
     componentDidMount() {
         Firebase.onAuthChange(this.onAuthChange)
     }
@@ -361,6 +369,8 @@ class App extends React.Component {
             return <AuthForm />
         }
 
+        const allTransfered = fileState.length && fileState.every(f => f.transfered)
+
         return (
             <div>
                 {
@@ -369,25 +379,35 @@ class App extends React.Component {
                             {
                                 files.length ? (
                                     <div className="transfer-file-list">
-                                        <div>Transfering files:</div>
+                                        <div>
+                                            {
+                                                allTransfered ? 'All files succesfully transfered' : 'Transfering files:'
+                                            }
+                                        </div>
                                         {
-                                            files.map((file, index) => (
-                                                <div className="transfer-file" key={ file.name }>
-                                                    { file.name }
-                                                    {
-                                                        fileState[index] ? (
-                                                            <React.Fragment>
-                                                                {
-                                                                    fileState[index].transfering ? <i>transfering...</i> : null
-                                                                }
-                                                                {
-                                                                    fileState[index].transfered ? <span>transfered ✔</span> : null
-                                                                }
-                                                            </React.Fragment>
-                                                        ) : null
-                                                    }
-                                                </div>
-                                            ))
+                                            files.map((file, index) => {
+                                                const fileStatus = fileState[index]
+
+                                                return (
+                                                    <div className={ `transfer-file ${this.getFileStatusClass(fileStatus)}` } key={ file.name }>
+                                                        <span className="transfer-file-name">{ file.name }</span>
+                                                        <span>
+                                                            {
+                                                                fileStatus ? (
+                                                                    <React.Fragment>
+                                                                        {
+                                                                            fileStatus.transfering ? <i>transfering...</i> : null
+                                                                        }
+                                                                        {
+                                                                            fileStatus.transfered ? <span>transfered ✔</span> : null
+                                                                        }
+                                                                    </React.Fragment>
+                                                                ) : null
+                                                            }
+                                                        </span>
+                                                    </div>
+                                                )
+                                            })
                                         }
                                     </div>
                                 ) : (
