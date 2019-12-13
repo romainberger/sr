@@ -12,7 +12,7 @@ fetch(`${baseUrl}/update-mac.json?t=${+new Date()}`)
     .then(res => res.json())
     .then(data => {
         getElement('#version', el => {
-            el.innerHTML = `version ${data.version} (beta)`
+            el.innerHTML = `version ${data.version}`
         })
         getElement('#download-mac', el => {
             el.href = data.url

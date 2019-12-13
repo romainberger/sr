@@ -1,14 +1,3 @@
-// peer.on('open', function(id) {
-//     console.log('My peer ID is: ' + id)
-
-//     let hash
-//     let code
-// })
-
-// peer.on('error', err => {
-//     console.error(err)
-// })
-
 const React = require('react')
 const { render } = require('react-dom')
 
@@ -80,7 +69,10 @@ class AuthForm extends React.Component {
     }
 
     switchForm = () => {
-        this.setState({ formType: this.state.formType === 'sign-in' ? 'sign-up' : 'sign-in' })
+        this.setState({
+            error: null,
+            formType: this.state.formType === 'sign-in' ? 'sign-up' : 'sign-in'
+        })
     }
 
     render() {
