@@ -4,3 +4,5 @@ echo "Running build"
 yarn build
 git add build
 git add _data
+
+yarn validate-json
