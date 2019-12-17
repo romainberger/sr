@@ -4,12 +4,13 @@
   "repository": "git@github.com:romainberger/sr.git",
   "author": "Romain Berger <romain@romainberger.com>",
   "scripts": {
-    "start": "webpack --config webpack.config.js --watch",
-    "server": "bundle exec jekyll serve",
-    "clean": "rm -rf build",
     "build": "yarn clean && yarn build-webpack",
     "build-webpack": "NODE_ENV=production webpack --config webpack.config.js",
-    "pre-commit": "./scripts/pre-commit"
+    "clean": "rm -rf build",
+    "pre-commit": "./scripts/pre-commit",
+    "server": "bundle exec jekyll serve",
+    "start": "webpack --config webpack.config.js --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -28,7 +29,9 @@
     "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
-    "husky": "3.0.5"
+    "husky": "3.0.5",
+    "jest": "24.9.0",
+    "puppeteer": "2.0.0"
   },
   "husky": {
     "hooks": {

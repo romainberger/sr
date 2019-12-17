@@ -2,7 +2,9 @@ module.exports = {
     presets: [
         "@babel/preset-react",
         ["@babel/preset-env", {
-            targets: {
+            targets: process.env.NODE_ENV === 'test' ? {
+                node: 'current'
+            } : {
                 chrome: 58,
                 ie: 10,
             },
