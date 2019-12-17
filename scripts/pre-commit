@@ -1,10 +1,6 @@
 #!/bin/bash
 
-HAS_DIFF=$(git st | grep src)
-
-if [ -n "$HAS_DIFF" ]; then
-    echo "Detecting changes in src, running build"
-    yarn build
-    git add build
-    git add _data
-fi
+echo "Running build"
+yarn build
+git add build
+git add _data
