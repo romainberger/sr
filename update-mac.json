@@ -1,6 +1,4 @@
 {
-  "version": "1.0.0",
-  "url": "https://github.com/romainberger/sr/releases/download/v1.0.0/SongRiffer-1.0.0.dmg",
   "changelog": {
     "sections": [
       {
@@ -13,5 +11,9 @@
         "message": "Stats, archives, basic support for videos... There's a lot of bug fixes and improvements included, and a lot of stuff coming in the future!"
       }
     ]
-  }
+  },
+  "date": 1576682144297,
+  "mandatory": false,
+  "version": "1.0.0",
+  "url": "https://github.com/romainberger/sr/releases/download/v1.0.0/SongRiffer-1.0.0.dmg"
 }

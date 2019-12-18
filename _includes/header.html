@@ -10,10 +10,10 @@
                 <div class="subtitle">Organize and browse all your ideas hassle-free.</div>
                 <div class="subtitle-second">The only riff library made for musicians, by musicians, 100% free.</div>
                 <div class="download-title">Download</div>
-                <div class="version" id="version"></div>
+                <div class="version">version {{ site.data.version.version }}</div>
                 <div class="download-links">
-                    <a class="download-link" href="#" download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">Mac</a>
-                    <a class="download-link" href="#" download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">Windows</a>
+                    <a class="download-link" href="{{ site.data.version.downloadUrls.mac }}" download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">Mac</a>
+                    <a class="download-link" href="{{ site.data.version.downloadUrls.windows }}" download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">Windows</a>
                 </div>
             </div>
         </div>
