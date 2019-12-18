@@ -1,3 +1,5 @@
+const https = require('https')
+
 const puppeteer = require("puppeteer")
 
 const BASE_URL = 'https://songriffer.com'
@@ -20,6 +22,14 @@ const newPage = (url = "/", options = {}) => {
    })
 }
 
+const getStatusCode = url => {
+  return new Promise(resolve => {
+    https.get(url, res => {
+      resolve(res.statusCode)
+    })
+  })
+}
+
 describe('Functional Tests', () => {
     let browser
     let page
@@ -38,6 +48,22 @@ describe('Functional Tests', () => {
     describe('Homepage', () => {
         test('page load', async () => {
             await page.waitForSelector("#version")
+        })
+
+        test('valid mac download url', async () => {
+          const button = await page.$('#download-mac')
+          const url = await page.evaluate(el => el.getAttribute('href'), button)
+
+          const status = await getStatusCode(url)
+          expect(status).not.toEqual(404)
+        })
+
+        test('valid windows download url', async () => {
+          const button = await page.$('#download-windows')
+          const url = await page.evaluate(el => el.getAttribute('href'), button)
+
+          const status = await getStatusCode(url)
+          expect(status).not.toEqual(404)
         })
     })
 
