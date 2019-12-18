@@ -47,7 +47,7 @@ describe('Functional Tests', () => {
 
     describe('Homepage', () => {
         test('page load', async () => {
-            await page.waitForSelector("#version")
+            await page.waitForSelector(".version")
         })
 
         test('valid mac download url', async () => {
@@ -84,5 +84,17 @@ describe('Functional Tests', () => {
 
             expect(signUpInputs.length).toEqual(2)
         }, 5000)
+    })
+
+    describe('Update manifests', () => {
+      test('mac', async () => {
+        const status = await getStatusCode(`${BASE_URL}/update-mac.json`)
+        expect(status).toEqual(200)
+      })
+
+      test('windows', async () => {
+        const status = await getStatusCode(`${BASE_URL}/update-win.json`)
+        expect(status).toEqual(200)
+      })
     })
 })

@@ -10,7 +10,7 @@
     "pre-commit": "./scripts/pre-commit",
     "server": "bundle exec jekyll serve",
     "start": "webpack --config webpack.config.js --watch",
-    "test": "jest",
+    "test": "jest --config jest-config.js",
     "validate-json": "./scripts/validate-json.js"
   },
   "dependencies": {
