@@ -2,18 +2,17 @@
   "changelog": {
     "sections": [
       {
-        "title": "Mobile Transfer",
-        "message": "Do you have dozens of voice memos in your phone with riff ideas? Duh, who doesn't. The new mobile transfer feature allows you to send them directly from your phone to your SongRiffer library in like two clicks. Maybe three. Download the new version and try it right now.",
-        "video": "https://songriffer.com/assets/feature-4-0.mp4"
+        "title": "Recorder",
+        "message": "When inspiration strikes, you don't always have the time to start your DAW, plug your instrument and tweak your tone. With the new recorder feature, you can record your indeas right into SongRiffer to capture your next song as soon as it pops into your head."
       },
       {
-        "title": "A bunch of other stuff",
-        "message": "Stats, archives, basic support for videos... There's a lot of bug fixes and improvements included, and a lot of stuff coming in the future!"
+        "title": "SongRiffer Account",
+        "message": "You now need an account to use SongRiffer. This does not change anything, it is just to prepare for the awsome features we're working on for the future..."
       }
     ]
   },
-  "date": 1577119292634,
-  "mandatory": false,
-  "version": "1.1.0",
-  "url": "https://github.com/romainberger/sr/releases/download/v1.1.0/SongRiffer-1.1.0.dmg"
+  "date": 1579166786890,
+  "mandatory": true,
+  "version": "1.2.0",
+  "url": "https://github.com/romainberger/sr/releases/download/v1.2.0/SongRiffer-1.2.0.dmg"
 }
