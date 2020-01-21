@@ -1,18 +1,7 @@
 {
-  "changelog": {
-    "sections": [
-      {
-        "title": "Recorder",
-        "message": "When inspiration strikes, you don't always have the time to start your DAW, plug your instrument and tweak your tone. With the new recorder feature, you can record your indeas right into SongRiffer to capture your next song as soon as it pops into your head."
-      },
-      {
-        "title": "SongRiffer Account",
-        "message": "You now need an account to use SongRiffer. This does not change anything, it is just to prepare for the awsome features we're working on for the future..."
-      }
-    ]
-  },
-  "date": 1579166786890,
-  "mandatory": true,
-  "version": "1.2.0",
-  "url": "https://github.com/romainberger/sr/releases/download/v1.2.0/SongRiffer.Setup.1.2.0.exe"
+  "changelog": {},
+  "date": 1579626580905,
+  "mandatory": false,
+  "version": "1.2.1",
+  "url": "https://github.com/romainberger/sr/releases/download/v1.2.1/SongRiffer.Setup.1.2.1.exe"
 }
