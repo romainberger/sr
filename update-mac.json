@@ -1,7 +1,15 @@
 {
-  "changelog": {},
-  "date": 1579626580905,
-  "mandatory": false,
-  "version": "1.2.1",
-  "url": "https://github.com/romainberger/sr/releases/download/v1.2.1/SongRiffer-1.2.1.dmg"
+  "changelog": {
+    "title": "Oops...",
+    "sections": [
+      {
+        "title": "It appears we broke something in our last update.",
+        "message": "Please download and install this new version so everything goes back to normal! We apologize for the inconvience, we promise we'll try really hard not to do it again in the future."
+      }
+    ]
+  },
+  "date": 1580204467043,
+  "mandatory": true,
+  "version": "1.2.3",
+  "url": "https://github.com/romainberger/sr/releases/download/v1.2.3/SongRiffer-1.2.3.dmg"
 }
