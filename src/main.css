@@ -592,3 +592,28 @@ footer {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+
+/*****************************
+          App Login
+******************************/
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-message {
+    display: none;
+    color: ;
+}
+
+.success-message.authenticated {
+    display: block;
+}
+
+.fb-button.authenticated {
+    display: none;
+}

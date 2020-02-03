@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /app-login
 
 Sitemap: https://songriffer.com/sitemap.xml

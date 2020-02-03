@@ -13,6 +13,7 @@ module.exports = {
     mode: NODE_ENV,
     entry: {
         index: path.join(__dirname, 'src/index.js'),
+        login: path.join(__dirname, 'src/login.js'),
         transfer: path.join(__dirname, 'src/transfer.js'),
     },
     output: {
