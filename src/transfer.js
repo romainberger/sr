@@ -1,6 +1,7 @@
 const React = require('react')
 const { render } = require('react-dom')
 
+const { Header } = require('./Header')
 const Firebase = require('./Firebase')
 
 const peer = new Peer(`songriffer-transfer-${Date.now()}-${Math.floor(Math.random() * 1000)}`)
@@ -437,13 +438,6 @@ class App extends React.Component {
         )
     }
 }
-
-const Header = () =>
-    <div className="transfer-header">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo transfer-logo">
-          <use xlinkHref="#e"/>
-        </svg>
-    </div>
 
 const AppWrapper = () =>
     <div className="transfer-wrapper">

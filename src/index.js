@@ -1,7 +1,6 @@
 require('./main.css')
 
 ;(() => {
-    console.log('##### do thing');
     const getElement = (selector, cb) => {
         const el = document.querySelector(selector)
 

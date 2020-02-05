@@ -593,27 +593,33 @@ footer {
     overflow: hidden;
 }
 
-
 /*****************************
           App Login
 ******************************/
 
-.container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
+.app-login-container {
     align-items: center;
 }
 
-.success-message {
-    display: none;
-    color: ;
+.app-login-success {
+    text-align: center;
 }
 
-.success-message.authenticated {
+.app-login-title {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.app-link {
     display: block;
+    border-radius: 3px;
+    background: #3B4096;
+    color: #dedede;
+    transition: background ease 0.2s;
+    text-decoration: none;
+    padding: 20px;
 }
 
-.fb-button.authenticated {
-    display: none;
+.app-link:hover {
+    background: #8086FF;
 }

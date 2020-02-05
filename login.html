@@ -13,15 +13,9 @@ title: App Login | SongRiffer
     <link rel="stylesheet" type="text/css" href="/{{ site.data.assets.main }}">
 </head>
 <body>
-    <div class="container">
-        <div class="fb-button">
-            <fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large"></fb:login-button>
-        </div>
-        <div class="success-message">
-            Logged in! Please return to your SongRiffer app to use it now.
-        </div>
-    </div>
+    {% include logo.html %}
+    {% include script.html %}
+    <div class="transfer-root app-login-container" id="root"></div>
     <script src="/{{ site.data.assets.login }}"></script>
-    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 </html>
