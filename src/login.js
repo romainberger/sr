@@ -4,7 +4,7 @@ import FacebookLogin from 'react-facebook-login'
 
 const { Header } = require('./Header')
 
-const APP_ID = '1100238770337128'
+const APP_ID = '241961913487001'
 
 const deeplinkTypes = {
     LOGIN_FACEBOOK: 'LOGIN_FACEBOOK',
