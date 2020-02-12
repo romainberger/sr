@@ -1,7 +1,7 @@
 {
-  "version": "1.2.3",
+  "version": "1.2.4",
   "downloadUrls": {
-    "mac": "https://github.com/romainberger/sr/releases/download/v1.2.3/SongRiffer-1.2.3.dmg",
-    "windows": "https://github.com/romainberger/sr/releases/download/v1.2.3/SongRiffer.Setup.1.2.3.exe"
+    "mac": "https://github.com/romainberger/sr/releases/download/v1.2.4/SongRiffer-1.2.4.dmg",
+    "windows": "https://github.com/romainberger/sr/releases/download/v1.2.4/SongRiffer.Setup.1.2.4.exe"
   }
 }
