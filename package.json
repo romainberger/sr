@@ -1,6 +1,6 @@
 {
   "name": "sr",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "repository": "git@github.com:romainberger/sr.git",
   "author": "Romain Berger <romain@romainberger.com>",
   "scripts": {
