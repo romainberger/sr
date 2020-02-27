@@ -1,15 +1,7 @@
 {
-  "changelog": {
-    "title": "Bug fixes here and there",
-    "sections": [
-      {
-        "title": "Did you know SongRiffer is 99% bug free?",
-        "message": "It's probably not true, but anyway, this is just an update that fixes a bunch of weird behaviors, bugs, and other unwanted things."
-      }
-    ]
-  },
-  "date": 1581501208069,
+  "changelog": {},
+  "date": 1582807041929,
   "mandatory": false,
-  "version": "1.2.4",
-  "url": "https://github.com/romainberger/sr/releases/download/v1.2.4/SongRiffer.Setup.1.2.4.exe"
+  "version": "1.2.5",
+  "url": "https://github.com/romainberger/sr/releases/download/v1.2.5/SongRiffer.Setup.1.2.5.exe"
 }
