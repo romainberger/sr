@@ -1,0 +1,12 @@
+{
+  "renderer": {
+    "js": "https://songriffer.com/app/renderer-7437ad42da9024aaae78.js"
+  },
+  "vendors~renderer": {
+    "js": "https://songriffer.com/app/vendors~renderer-11042d3d8eed26b2ce55.js"
+  },
+  "": {
+    "js": "https://songriffer.com/app/9b8ea8abcf2fd171fa20.worker.js",
+    "json": "https://songriffer.com/app/manifest.json"
+  }
+}
