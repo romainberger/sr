@@ -1,0 +1,11 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{237:function(e,t,r){"use strict";r.r(t);var n=r(0),a=r.n(n),s=r(6),o=r(2),c=r(29),l=r.n(c),i=r(39),u=r(26);class p extends n.Component{render(){const{project:e}=this.props;return n.createElement("div",null,n.createElement(u.Link,{to:`/project/${e.id}`},e.name))}}var m,d=r(28),j=r.n(d);function h(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}r.d(t,"default",function(){return b});const P=r(82),f=r(32),w=r(10),E=r(7),{selectUser:v}=r(21),g=o.default.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+`,y=o.default.form`
+    display: flex;
+    flex-direction: column;
+`;let b=Object(s.connect)(e=>({user:v(e)}))(m=class extends a.a.Component{constructor(...e){super(...e),h(this,"removeProjectsListener",void 0),h(this,"state",{newProjectName:"",projects:null}),h(this,"createNewProject",e=>{e.preventDefault(),this.state.newProjectName.length&&w.createProject(this.props.user.uid,this.state.newProjectName).then(e=>{this.props.history.push(`/project/${e}`)})})}listenProjectsUpdate(){this.removeProjectsListener=w.listenForProjectsUpdate(this.props.user.uid,e=>{this.setState({projects:e})})}renderLoading(){return a.a.createElement(i.a,null)}renderProjets(){const{projects:e}=this.state;return a.a.createElement(a.a.Fragment,null,e.map(e=>a.a.createElement(p,{project:e,key:e.name})))}renderEmptyState(e){return a.a.createElement(g,null,a.a.createElement("div",null,"Create ",e?"a new project:":"your first project:"),a.a.createElement(j.a,null,a.a.createElement(y,{onSubmit:this.createNewProject},a.a.createElement(P,{onChange:e=>this.setState({newProjectName:e.target.value}),type:"text",value:this.state.newProjectName,placeholder:"Project name"}),a.a.createElement(j.a,null,a.a.createElement(l.a,null,"Create")))))}componentDidMount(){E.trackScreen("projects"),this.listenProjectsUpdate()}componentWillUnmount(){this.removeProjectsListener()}render(){const{projects:e}=this.state;return a.a.createElement(f,null,null===e?this.renderLoading():a.a.createElement(a.a.Fragment,null,this.renderProjets(),this.renderEmptyState(e.length)))}})||m}}]);
