@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /s/*
+
 Sitemap: https://songriffer.com/sitemap.xml

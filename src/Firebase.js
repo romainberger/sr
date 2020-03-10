@@ -1,5 +1,6 @@
 const firebase = require('firebase/app')
 require('firebase/auth')
+require('firebase/functions')
 
 const firebaseConfig = {
     apiKey: "AIzaSyBrkXIQBEvF9qslWeO91XUUUng3zAH9ZEk",
@@ -47,6 +48,12 @@ class Firebase {
 
     signOut() {
         this.auth.signOut()
+    }
+
+    getSharedFile(uid, publicId) {
+        const getSharedFile = firebase.functions().httpsCallable('getSharedFile')
+
+        return getSharedFile({ uid, publicId })
     }
 }
 
