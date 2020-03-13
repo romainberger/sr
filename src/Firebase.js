@@ -2,7 +2,7 @@ const firebase = require('firebase/app')
 require('firebase/auth')
 require('firebase/functions')
 
-const firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyBrkXIQBEvF9qslWeO91XUUUng3zAH9ZEk",
     authDomain: "songriffer.com",
     databaseURL: "https://songriffer.firebaseio.com",
@@ -11,6 +11,12 @@ const firebaseConfig = {
     messagingSenderId: "246769208094",
     appId: "1:246769208094:web:6a65c6866b23adc4",
 }
+
+try {
+    firebaseConfig = require('./firebase-config.json')
+    console.log('############## staging config');
+}
+catch(e) {}
 
 class Firebase {
     constructor(config) {

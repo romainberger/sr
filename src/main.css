@@ -611,16 +611,22 @@ footer {
 
 .share-wrapper {
     display: flex;
+    min-height: 60vh;
     flex: 1;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .share-loader {
     margin: auto;
     background: none;
     display: block;
+}
+
+.shared-file {
+    width: 100%;
+    max-width: 800px;
 }
 
 .share-title {

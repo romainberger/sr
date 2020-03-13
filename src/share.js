@@ -3,6 +3,20 @@ const { render } = require('react-dom')
 
 const Firebase = require('./Firebase')
 
+const pad = x => `${x}`.length > 1 ? `${x}` : `0${x}`
+
+export const formatDuration = duration => {
+    const rawHours = Math.floor(duration / 3600)
+    const rawMinutes = Math.floor(duration / 60) % 60
+    const rawSeconds = duration % 60
+
+    const hours = pad(rawHours)
+    const minutes = pad(rawMinutes)
+    const seconds = pad(rawSeconds)
+
+    return `${rawHours ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+
 const Loader = ({ size = 50 }) =>
     <svg
         className="share-loader"
@@ -34,10 +48,14 @@ const Loader = ({ size = 50 }) =>
 
 class App extends React.Component {
     state = {
+        currentTime: 0,
         data: {},
-        loading: true,
         error: null,
+        loading: true,
+        playing: false,
     }
+
+    player = React.createRef()
 
     getFileIds = () => {
         const { pathname } = window.location
@@ -71,12 +89,43 @@ class App extends React.Component {
             })
     }
 
+    togglePlay = () => {
+        this.state.playing ? this.pause() : this.play()
+    }
+
+    play = () => {
+        if (this.player.current) {
+            this.player.current.play()
+            this.setState({ playing: true })
+            this.attachEvent()
+        }
+    }
+
+    pause = () => {
+        if (this.player.current) {
+            this.player.current.pause()
+            this.setState({ playing: false })
+        }
+    }
+
+    attachEvent() {
+        if (this.eventsAttached || !this.player.current) {
+            return
+        }
+
+        this.eventsAttached = true
+
+        this.player.current.addEventListener('timeupdate', ev => {
+            this.setState({ currentTime: parseInt(this.player.current.currentTime, 10) })
+        })
+    }
+
     componentDidMount() {
         this.loadFile()
     }
 
     render() {
-        const { data, error, loading } = this.state
+        const { currentTime, data, error, loading, playing } = this.state
 
         let content = null
 
@@ -88,10 +137,14 @@ class App extends React.Component {
         }
         else {
             content = (
-                <>
+                <div className="shared-file">
                     <div className="share-title">{data.name}</div>
-                    <audio src={data.url} controls />
-                </>
+                    <div>{formatDuration(currentTime)}</div>
+                    <button onClick={this.togglePlay}>
+                        {playing ? 'Pause' : 'Play'}
+                    </button>
+                    <audio ref={this.player} src={data.url} />
+                </div>
             )
         }
 
