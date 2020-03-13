@@ -1,32 +1,32 @@
 {
   "manifest": {
-    "js": "https://songriffer.com/app/manifest-3485a212e0f9c82bed69.js"
+    "js": "https://songriffer.com/app/manifest-510288cbd164cb865891.js"
   },
   "PageProjects": {
-    "js": "https://songriffer.com/app/PageProjects-2e9340359ad289e918f1.bundle.js"
+    "js": "https://songriffer.com/app/PageProjects-2f33775a8ce1528940d2.bundle.js"
   },
   "PageStats": {
-    "js": "https://songriffer.com/app/PageStats-99797b488ba8c3560869.bundle.js"
+    "js": "https://songriffer.com/app/PageStats-fb3c86beef2cc42e93ca.bundle.js"
   },
   "PageTransfer": {
-    "js": "https://songriffer.com/app/PageTransfer-029c8455fae0f7d74f11.bundle.js"
+    "js": "https://songriffer.com/app/PageTransfer-1c7ca11230f818e545da.bundle.js"
   },
   "renderer": {
-    "js": "https://songriffer.com/app/renderer-acbf451261e8f64664ae.bundle.js"
+    "js": "https://songriffer.com/app/renderer-a88a9665601e9c2a232b.bundle.js"
   },
   "vendors~renderer": {
-    "js": "https://songriffer.com/app/vendors~renderer-8f58d3dfd59076ac14f9.bundle.js"
+    "js": "https://songriffer.com/app/vendors~renderer-19b23390e963a1a4a265.bundle.js"
   },
   "": {
     "js": [
-      "https://songriffer.com/app/6-70a8cda06f64084e82c4.bundle.js",
+      "https://songriffer.com/app/6-93fc05b63453d98d8e1b.bundle.js",
       "https://songriffer.com/app/7-7468ef7a598500cdf972.bundle.js",
       "https://songriffer.com/app/9b8ea8abcf2fd171fa20.worker.js"
     ],
     "json": "https://songriffer.com/app/manifest.json"
   },
   "metadata": {
-    "appVersion": "1.5.0",
+    "appVersion": "1.6.1",
     "assetsList": [
       "manifest",
       "vendors~renderer",
