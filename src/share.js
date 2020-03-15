@@ -139,7 +139,7 @@ class App extends React.Component {
             content = (
                 <div className="shared-file">
                     <div className="share-title">{data.name}</div>
-                    <div>{formatDuration(currentTime)}</div>
+                    <div>{formatDuration(currentTime)} - {formatDuration(data.duration)}</div>
                     <button onClick={this.togglePlay}>
                         {playing ? 'Pause' : 'Play'}
                     </button>
@@ -150,10 +150,25 @@ class App extends React.Component {
 
         return (
             <div className="share-wrapper">
+                <Header />
+                <div className="download-block share-download-block">
+                    <div>Download SongRiffer:</div>
+                    <div className="download-links">
+                        <a className="download-link" href={ MAC_DOWNLOAD_URL } download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">Mac</a>
+                        <a className="download-link" href={ WINDOWS_DOWNLOAD_URL } download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">Windows</a>
+                    </div>
+                </div>
                 {content}
             </div>
         )
     }
 }
+
+const Header = () =>
+    <div className="transfer-header">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo transfer-logo share-logo">
+          <use xlinkHref="#e"/>
+        </svg>
+    </div>
 
 render(<App />, document.querySelector('#root'))

@@ -618,6 +618,22 @@ footer {
     align-items: center;
 }
 
+.share-logo {
+    height: 50px;
+}
+
+.share-download-block {
+    max-width: 500px;
+}
+
+.share-download-block .download-links {
+    margin: 20px 0;
+}
+
+.share-download-block a {
+    padding: 10px 0;
+}
+
 .share-loader {
     margin: auto;
     background: none;

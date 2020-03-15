@@ -31,11 +31,16 @@ title: Share | Songriffer
     <link rel="stylesheet" type="text/css" href="/{{ site.data.assets.main }}">
 </head>
 <body>
+    {% include logo.html %}
     <div class="share-page">
         <div id="root" class="share-root"></div>
         {% include footer.html %}
     </div>
     {% include script.html %}
+    <script>
+        const MAC_DOWNLOAD_URL = '{{ site.data.version.downloadUrls.mac }}';
+        const WINDOWS_DOWNLOAD_URL = '{{ site.data.version.downloadUrls.windows }}';
+    </script>
     <script src="/{{ site.data.assets.share }}"></script>
 </body>
 </html>
