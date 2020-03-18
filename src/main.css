@@ -618,8 +618,19 @@ footer {
     align-items: center;
 }
 
+.share-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.share-header > div {
+    width: 50%;
+}
+
 .share-logo {
     height: 50px;
+    margin-right: 50px;
+    transform: scale(1);
 }
 
 .share-download-block {
@@ -632,6 +643,13 @@ footer {
 
 .share-download-block a {
     padding: 10px 0;
+}
+
+.share-separator {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 40px;
+    background: #dedede;
 }
 
 .share-loader {

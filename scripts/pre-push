@@ -1,0 +1,25 @@
+#!/bin/bash
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+if [[ $BRANCH = 'gh-pages' ]]
+then
+    echo "Running build"
+    yarn build
+
+    GIT_STATUS=$(git status --porcelain)
+
+    if [[ $GIT_STATUS ]]
+    then
+        echo "Commiting build"
+
+        git add build
+        git add _data
+
+        git commit -m 'Build'
+
+        yarn validate-json
+    fi
+else
+    echo 'Skipping build'
+fi
