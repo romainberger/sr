@@ -19,6 +19,8 @@ then
         git commit -m 'Build'
 
         yarn validate-json
+    else
+        echo "No build needed commited"
     fi
 else
     echo 'Skipping build'

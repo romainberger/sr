@@ -58,11 +58,23 @@ class App extends React.Component {
     player = React.createRef()
 
     getFileIds = () => {
-        const { pathname } = window.location
-        const chunks = pathname.split('/')
+        const { search } = window.location
 
-        const publicId = chunks.pop()
-        const uid = chunks.pop()
+        const params = search.replace('?', '').split('&').reduce((acc, param) => {
+            const chunks = param.split('=')
+            acc[chunks[0]] = chunks[1]
+
+            return acc
+        }, {})
+
+        if (!params.s) {
+            return {
+                uid: '',
+                publicId: '',
+            }
+        }
+
+        const [ uid, publicId ] = params.s.split('/')
 
         return {
             uid,
@@ -160,7 +172,7 @@ class App extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div class="share-separator" />
+                <div className="share-separator" />
                 {content}
             </div>
         )
