@@ -1,8 +1,15 @@
 #!/bin/bash
 
-echo "Running build"
-yarn build
-git add build
-git add _data
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-yarn validate-json
+if [[ $BRANCH = 'gh-pages' ]]
+then
+    echo "Running build"
+    yarn build
+    git add build
+    git add _data
+
+    yarn validate-json
+else
+    echo 'Skipping build'
+fi

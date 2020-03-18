@@ -5,6 +5,7 @@ const path = require('path')
 const files = [
     '_data/assets.json',
     '_data/version.json',
+    'app/assets-manifest.json',
     'update-mac.json',
     'update-win.json',
 ]

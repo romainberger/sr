@@ -1,5 +1,6 @@
 {
-  "main": "build/main-eeeaae647ce12b550e12.css",
-  "index": "build/index-eeeaae647ce12b550e12.js",
-  "transfer": "build/transfer-e91b024d37a43200dc7f.js"
+  "main": "build/main-db01e7a1c38cbe45a471.css",
+  "index": "build/index-db01e7a1c38cbe45a471.js",
+  "share": "build/share-734ccee2a2c8a9af438e.js",
+  "transfer": "build/transfer-7d2c8935182a14e993da.js"
 }

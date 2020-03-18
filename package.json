@@ -8,6 +8,7 @@
     "build-webpack": "NODE_ENV=production webpack --config webpack.config.js",
     "clean": "rm -rf build",
     "pre-commit": "./scripts/pre-commit",
+    "pre-push": "./scripts/pre-push",
     "server": "bundle exec jekyll serve",
     "start": "webpack --config webpack.config.js --watch",
     "test": "jest --config jest-config.js",
@@ -36,7 +37,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pre-commit"
+      "pre-commit": "yarn pre-commit",
+      "pre-push": "yarn pre-push"
     }
   },
   "license": "MIT"

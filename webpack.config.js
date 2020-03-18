@@ -13,6 +13,7 @@ module.exports = {
     mode: NODE_ENV,
     entry: {
         index: path.join(__dirname, 'src/index.js'),
+        share: path.join(__dirname, 'src/share.js'),
         transfer: path.join(__dirname, 'src/transfer.js'),
     },
     output: {
