@@ -666,3 +666,21 @@ footer {
 .share-title {
     margin-bottom: 40px;
 }
+
+@media (max-width: 640px) {
+    .share-header > div {
+        width: 100%;
+    }
+
+    .share-logo {
+        margin-right: 0;
+    }
+
+    .share-download-block {
+        display: none;
+    }
+
+    .shared-file {
+        padding: 0 25px;
+    }
+}
