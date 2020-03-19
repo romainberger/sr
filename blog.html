@@ -1,0 +1,21 @@
+---
+layout: default
+permalink: /blog
+title: Blog | Songriffer
+---
+
+{% include header.html %}
+
+<div class="content legal-content">
+    <h2>Blog</h2>
+
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
+
+{% include footer.html %}
