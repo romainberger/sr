@@ -1,21 +1,21 @@
 {
   "manifest": {
-    "js": "https://songriffer.com/app/manifest-5ff5c084dcaa32340bf2.js"
+    "js": "https://songriffer.com/app/manifest-5ad3082fc57b40f952e2.js"
   },
   "PageProjects": {
-    "js": "https://songriffer.com/app/PageProjects-0d77ff87cfa8b33df617.bundle.js"
+    "js": "https://songriffer.com/app/PageProjects-03b1f88c0354dc522aec.bundle.js"
   },
   "PageStats": {
     "js": "https://songriffer.com/app/PageStats-02b78e7471173fc18cb5.bundle.js"
   },
   "PageTransfer": {
-    "js": "https://songriffer.com/app/PageTransfer-e419d3ec1823d0677700.bundle.js"
+    "js": "https://songriffer.com/app/PageTransfer-5e34bd7052187cca18eb.bundle.js"
   },
   "renderer": {
-    "js": "https://songriffer.com/app/renderer-52f696b2aeff0a462a74.bundle.js"
+    "js": "https://songriffer.com/app/renderer-24b738654c2f95f210c5.bundle.js"
   },
   "vendors~renderer": {
-    "js": "https://songriffer.com/app/vendors~renderer-20bafa61d857ba9416ba.bundle.js"
+    "js": "https://songriffer.com/app/vendors~renderer-16ada00ad6060c6c1c29.bundle.js"
   },
   "": {
     "js": [
@@ -26,7 +26,7 @@
     "json": "https://songriffer.com/app/manifest.json"
   },
   "metadata": {
-    "appVersion": "1.7.1",
+    "appVersion": "1.7.2",
     "assetsList": [
       "manifest",
       "vendors~renderer",
