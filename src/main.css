@@ -616,14 +616,15 @@ footer {
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-height: 500px;
 }
 
 .share-wrapper {
     display: flex;
     min-height: 60vh;
+    padding-top: 40px;
     flex: 1;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 

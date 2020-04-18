@@ -94,11 +94,40 @@ class App extends React.Component {
                 this.setState({
                     data,
                     loading: false,
+                }, () => {
+                    try {
+                        this.setMediaSession()
+                    }
+                    catch(e) {}
                 })
             })
             .catch(e => {
                 console.error(e)
             })
+    }
+
+    setMediaSession = () => {
+        const { data } = this.state
+
+        if ('mediaSession' in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: data.name,
+                artist: 'SongRiffer',
+                album: 'Shared with SongRiffer',
+                artwork: [
+                    { src: 'https://songriffer.com/icon_128x128.png', sizes: '128x128', type: 'image/png' },
+                    { src: 'https://songriffer.com/icon_256x256.png', sizes: '256x256', type: 'image/png' },
+                    { src: 'https://songriffer.com/icon_512x512.png', sizes: '512x512', type: 'image/png' },
+                ]
+            });
+
+            navigator.mediaSession.setActionHandler('play', this.play);
+            navigator.mediaSession.setActionHandler('pause', this.pause);
+            // navigator.mediaSession.setActionHandler('seekbackward', function() {});
+            // navigator.mediaSession.setActionHandler('seekforward', function() {});
+            // navigator.mediaSession.setActionHandler('previoustrack', function() {});
+            // navigator.mediaSession.setActionHandler('nexttrack', function() {});
+        }
     }
 
     togglePlay = () => {
@@ -145,7 +174,9 @@ class App extends React.Component {
             content = <Loader />
         }
         else if (error) {
-            content = <div>Error: {error}</div>
+            content = (
+                <div>Oops... It seems the file you're trying to access does not exist or has been removed :/</div>
+            )
         }
         else {
             content = (
