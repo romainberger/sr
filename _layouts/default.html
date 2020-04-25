@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>{{ page.title | default: 'SongRiffer' }}</title>
-    <meta name="description" content="Organize and browse all your ideas hassle-free. The only riff library app made for musicians, by musicians, 100% free. Download for Mac and Windows." />
+    <meta name="description" content="Keep track of all your musical ideas. Available for Mac, Windows, iOS and Android." />
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <meta name=viewport content="width=device-width,initial-scale=1">
@@ -11,18 +11,18 @@
     <meta name="google-site-verification" content="NtQTcrRTr-dxfiRPfAz8gPmGaxNsb8saFpQ8dv1lU7M" />
 
     <meta property="og:site_name" content="SongRiffer" />
-    <meta property="og:title" content="SongRiffer" />
+    <meta property="og:title" content="{{ page.title | default: 'SongRiffer' }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://songriffer.com" />
+    <meta property="og:url" content="https://songriffer.com{{ page.permalink | default: '' }}" />
     <meta property="og:image" content="https://songriffer.com/assets/screenshot-header.png" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="960" />
-    <meta property="og:description" content="Organize and browse all your ideas hassle-free. The only riff library app made for musicians, by musicians, 100% free. Download for Mac and Windows." />
+    <meta property="og:description" content="Keep track of all your musical ideas. Available for Mac, Windows, iOS and Android." />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="https://songriffer.com" />
+    <meta name="twitter:site" content="https://songriffer.com{{ page.permalink | default: '' }}" />
     <meta name="twitter:title" content="SongRiffer" />
-    <meta name="twitter:description" content="Organize and browse all your ideas hassle-free. The only riff library app made for musicians, by musicians, 100% free. Download for Mac and Windows." />
+    <meta name="twitter:description" content="Keep track of all your musical ideas. Available for Mac, Windows, iOS and Android." />
     <meta name="twitter:image" content="https://songriffer.com/assets/screenshot-header.png" />
 
     <link rel="preload" href="assets/feature-1-0.mp4" as="video">
