@@ -176,6 +176,18 @@ h1 {
     background: #8086FF;
 }
 
+.header-mobile-link {
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.header-mobile-link:hover {
+    text-decoration: underline;
+}
+
 .header-img-wrapper {
     display: flex;
     justify-content: center;
