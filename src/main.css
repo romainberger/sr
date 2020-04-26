@@ -234,8 +234,13 @@ section > div {
     width: 35%;
 }
 
-.feature-video {
+.feature-video,
+.feature-image {
     width: 65%;
+}
+
+.feature-image {
+    text-align: center;
 }
 
 section video {
@@ -366,7 +371,8 @@ footer {
         width: 45%;
     }
 
-    .feature-video {
+    .feature-video,
+    .feature-image {
         width: 55%;
     }
 }
@@ -388,7 +394,8 @@ footer {
         width: 100%;
     }
 
-    .feature-video {
+    .feature-video,
+    .feature-image {
         width: 90%;
         padding: 25px;
         margin: 0 auto;
@@ -724,8 +731,12 @@ footer {
 /*****************************
             Mobile
 ******************************/
+.mobile-content {
+    padding: 0 30px;
+}
+
 .mobile-content p {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .form-link-wrapper {
@@ -746,4 +757,8 @@ footer {
     border-radius: 3px;
     transition: background ease 0.1s;
     text-decoration: none !important;
+}
+
+.mobile-screenshot {
+    max-height: 500px;
 }
