@@ -42,6 +42,11 @@ header {
     overflow: hidden;
 }
 
+.header-light {
+    min-height: 130px;
+    padding: 0;
+}
+
 header:before {
     position: absolute;
     content: '';
@@ -97,6 +102,14 @@ h1 {
     margin-top: 120px;
     transform: scale(1.5);
     transform-origin: left;
+}
+
+.header-light .logo {
+    height: 60px;
+    margin-top: 50px;
+}
+
+.logo-link {
 }
 
 .def-logo {
@@ -163,6 +176,18 @@ h1 {
     background: #8086FF;
 }
 
+.header-mobile-link {
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.header-mobile-link:hover {
+    text-decoration: underline;
+}
+
 .header-img-wrapper {
     display: flex;
     justify-content: center;
@@ -209,8 +234,13 @@ section > div {
     width: 35%;
 }
 
-.feature-video {
+.feature-video,
+.feature-image {
     width: 65%;
+}
+
+.feature-image {
+    text-align: center;
 }
 
 section video {
@@ -341,7 +371,8 @@ footer {
         width: 45%;
     }
 
-    .feature-video {
+    .feature-video,
+    .feature-image {
         width: 55%;
     }
 }
@@ -363,7 +394,8 @@ footer {
         width: 100%;
     }
 
-    .feature-video {
+    .feature-video,
+    .feature-image {
         width: 90%;
         padding: 25px;
         margin: 0 auto;
@@ -422,6 +454,7 @@ footer {
 .faq-section h2 {
     text-align: left;
     padding-bottom: 10px;
+    letter-spacing: initial;
 }
 
 
@@ -616,14 +649,15 @@ footer {
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-height: 500px;
 }
 
 .share-wrapper {
     display: flex;
     min-height: 60vh;
+    padding-top: 40px;
     flex: 1;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -692,4 +726,39 @@ footer {
     .shared-file {
         padding: 0 25px;
     }
+}
+
+/*****************************
+            Mobile
+******************************/
+.mobile-content {
+    padding: 0 30px;
+}
+
+.mobile-content p {
+    font-size: 18px;
+}
+
+.form-link-wrapper {
+    padding: 25px 0;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-link {
+    display: block;
+    padding: 10px 15px;
+    background: #3B4096;
+    color: #dedede;
+    font-size: 16px;
+    border-radius: 3px;
+    transition: background ease 0.1s;
+    text-decoration: none !important;
+}
+
+.mobile-screenshot {
+    max-height: 500px;
 }
