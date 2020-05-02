@@ -12,7 +12,7 @@
     "js": "https://songriffer.com/app/PageTransfer-4d96d3fe9335a63458d8.bundle.js"
   },
   "renderer": {
-    "js": "https://songriffer.com/app/renderer-4e66cb24a7992e598bb2.bundle.js"
+    "js": "https://songriffer.com/app/renderer-dba684a16bc9742385e5.bundle.js"
   },
   "vendors~renderer": {
     "js": "https://songriffer.com/app/vendors~renderer-9a2b0c39b132e5cdef4f.bundle.js"
@@ -22,7 +22,7 @@
     "json": "https://songriffer.com/app/manifest.json"
   },
   "metadata": {
-    "appVersion": "1.9.1",
+    "appVersion": "1.9.2",
     "assetsList": [
       "manifest",
       "vendors~renderer",
