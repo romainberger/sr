@@ -12,11 +12,13 @@ let firebaseConfig = {
     appId: "1:246769208094:web:6a65c6866b23adc4",
 }
 
-try {
-    firebaseConfig = require('./firebase-config.json')
-    console.log('############## staging config');
+if (__DEV__) {
+    try {
+        firebaseConfig = require('./firebase-config.json')
+        console.log('############## staging config');
+    }
+    catch(e) {}
 }
-catch(e) {}
 
 class Firebase {
     constructor(config) {

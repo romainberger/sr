@@ -74,7 +74,7 @@ class App extends React.Component {
             }
         }
 
-        const [ uid, publicId ] = params.s.split('/')
+        const [ uid, publicId ] = params.s.split('_')
 
         return {
             uid,
@@ -84,6 +84,12 @@ class App extends React.Component {
 
     loadFile = () => {
         const { uid, publicId } = this.getFileIds()
+
+        if (!uid.length || !publicId.length) {
+            this.setState({
+                error: 'Oops... It seems the link is broken...'
+            })
+        }
 
         Firebase.getSharedFile(uid, publicId)
             .then(({ data }) => {
