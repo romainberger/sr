@@ -41,5 +41,6 @@
       "pre-push": "yarn pre-push"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "private": true
 }
