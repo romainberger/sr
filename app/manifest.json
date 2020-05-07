@@ -1,7 +1,7 @@
 {
   "scripts": [
-    "https://songriffer.com/app/manifest-95137a934d51a09aaecf.js",
-    "https://songriffer.com/app/vendors~renderer-57214ed6c6ea778f07dc.bundle.js",
-    "https://songriffer.com/app/renderer-9f5a6754c18bfcc9c3bb.bundle.js"
+    "https://songriffer.com/app/manifest-d85b5b1453bfc95c03c9.js",
+    "https://songriffer.com/app/vendors~renderer-7a93efa9fa596bdb65d1.bundle.js",
+    "https://songriffer.com/app/renderer-7e3cafc93a4f980b2d52.bundle.js"
   ],
 }
