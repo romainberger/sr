@@ -31,6 +31,14 @@ body {
     background: #7C5AB0;
 }
 
+@font-face {
+    font-family: Ionicons;
+    src: url("/assets/ionicons.woff") format("woff"),
+        url("/assets/ionicons.woff2") format("woff2"),
+        url("/assets/ionicons.svg") format("svg"),
+        url("/assets/ionicons.ttf") format("truetype");
+}
+
 header {
     position: relative;
     min-height: 500px;
@@ -702,12 +710,29 @@ footer {
 }
 
 .shared-file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 800px;
 }
 
 .share-title {
     margin-bottom: 40px;
+}
+
+.play-button {
+    font-family: Ionicons;
+    font-size: 20px;
+    color: #dedede;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.play-button:active {
+    outline: none;
 }
 
 @media (max-width: 640px) {

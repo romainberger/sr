@@ -189,8 +189,8 @@ class App extends React.Component {
                 <div className="shared-file">
                     <div className="share-title">{data.name}</div>
                     <div>{formatDuration(currentTime)} - {formatDuration(data.duration)}</div>
-                    <button onClick={this.togglePlay}>
-                        {playing ? 'Pause' : 'Play'}
+                    <button className="play-button" onClick={this.togglePlay}>
+                        {String.fromCharCode(playing ? '62584' : '62600')}
                     </button>
                     <audio ref={this.player} src={data.url} />
                 </div>
