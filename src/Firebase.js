@@ -1,5 +1,4 @@
 const firebase = require('firebase/app')
-require('firebase/auth')
 require('firebase/functions')
 
 let firebaseConfig = {
@@ -23,39 +22,6 @@ if (__DEV__) {
 class Firebase {
     constructor(config) {
         this.firebase = firebase.initializeApp(config)
-        this.auth = this.firebase.auth()
-    }
-
-    onAuthChange(cb) {
-        this.auth.onAuthStateChanged(authUser => {
-            cb(authUser)
-        })
-    }
-
-    signUpWithEmailPassword(email, password) {
-        return new Promise((resolve, reject) => {
-            this.auth.createUserWithEmailAndPassword(email, password)
-                .then(resolve)
-                .catch(err => {
-                    console.error('########### Error with sign up', err)
-                    reject(err)
-                })
-        })
-    }
-
-    signInWithEmailPassword(email, password) {
-        return new Promise((resolve, reject) => {
-            this.auth.signInWithEmailAndPassword(email, password)
-                .then(resolve)
-                .catch(err => {
-                    console.error('########### Error with sign in', err)
-                    reject(err)
-                })
-        })
-    }
-
-    signOut() {
-        this.auth.signOut()
     }
 
     getSharedFile(uid, publicId) {
@@ -65,4 +31,4 @@ class Firebase {
     }
 }
 
-module.exports = new Firebase(firebaseConfig)
+export default new Firebase(firebaseConfig)

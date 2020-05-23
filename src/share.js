@@ -1,11 +1,11 @@
-const React = require('react')
-const { render } = require('react-dom')
+import React from 'react'
+import { render } from 'react-dom'
 
-const Firebase = require('./Firebase')
+import Firebase from './Firebase'
 
 const pad = x => `${x}`.length > 1 ? `${x}` : `0${x}`
 
-export const formatDuration = duration => {
+const formatDuration = duration => {
     const rawHours = Math.floor(duration / 3600)
     const rawMinutes = Math.floor(duration / 60) % 60
     const rawSeconds = duration % 60
@@ -217,10 +217,10 @@ class App extends React.Component {
 }
 
 const Header = () =>
-    <div className="transfer-header">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo transfer-logo share-logo">
+    <a href="/" className="share-header">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo share-logo">
           <use xlinkHref="#e"/>
         </svg>
-    </div>
+    </a>
 
 render(<App />, document.querySelector('#root'))

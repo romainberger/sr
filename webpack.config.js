@@ -14,7 +14,6 @@ module.exports = {
     entry: {
         index: path.join(__dirname, 'src/index.js'),
         share: path.join(__dirname, 'src/share.js'),
-        transfer: path.join(__dirname, 'src/transfer.js'),
     },
     output: {
         filename: NODE_ENV === 'production' ? '[name]-[chunkhash].js' : '[name].js',

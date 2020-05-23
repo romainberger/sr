@@ -7,4 +7,3 @@ src/firebase-config.json
 build/index.js
 build/main.css
 build/share.js
-build/transfer.js

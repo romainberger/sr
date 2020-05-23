@@ -465,187 +465,15 @@ footer {
     letter-spacing: initial;
 }
 
-
-/*****************************
-          Tranfer
-******************************/
-
-.transfer-root {
-    height: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.transfer-wrapper {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.transfer-header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.transfer-logo {
-    width: auto;
-    margin: 40px 0;
-}
-
-.transfer-auth {
-    max-width: 400px;
-    padding: 40px 0;
-}
-
-.auth-title {
-    margin-bottom: 25px;
-}
-
-.log-out-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-top: 150px;
-    justify-content: center;
-    align-items: center;
-}
-
-.log-out-text {
-    padding-bottom: 15px;
-    font-size: 14px;
-}
-
-.transfer-root input {
-    display: inline-block;
-    background: transparent;
-    outline: none;
-    color: #dedede;
-    font-size: 16px;
-    width: 100%;
-    padding: 5px 7px;
-    margin-bottom: 15px;
-    border-radius: 0;
-    border: 0;
-    border-bottom: 1px solid #dedede;
-    transition: border ease 0.1s;
-}
-
-.transfer-root input::placeholder {
-    color: #dedede;
-    opacity: 0.4;
-}
-
-.transfer-root input:focus {
-    border-bottom: 1px solid #8086FF;
-}
-
-.transfer-root .files-input {
-    display: none;
-}
-
-.transfer-root button,
-.transfer-root .files-input-label {
-    outline: none;
-    background: #3B4096;
-    color: #dedede;
-    font-family: inherit;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 3px;
-    border: none;
-    transition: background ease 0.1s;
-}
-
-.transfer-root .files-input-label {
-    display: block;
-    width: 100%;
-    padding: 15px 0;
-    margin: 40px 0;
-    text-align: center;
-    cursor: pointer;
-}
-
-.transfer-root .secondary-button {
-    border: 1px solid #555;
-    background: none;
-}
-
-.transfer-auth button:hover,
-.transfer-root .files-input-label:hover,
-.transfer-root .secondary-button:hover {
-    background: #a389c9;
-}
-
-.form-type-switch {
-    margin-top: 40px;
-    text-decoration: underline;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.auth-error {
-    margin-bottom: 15px;
-    color: #963c57;
-    font-size: 14px;
-}
-
-.transfer-file-wrapper {
-    max-width: 400px;
-}
-
-.transfer-root .code-input-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.transfer-root .code-input-text {
-    margin: 40px 0;
-}
-
-.transfer-root .code-input {
-    max-width: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    text-align: center;
-}
-
-.transfer-root .code-input:focus {
-    border: none;
-}
-
-.transfer-file {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-}
-
-.transfer-file-transfered {
-    color: #1f1f1f;
-    background: #BBFFC7;
-}
-
-.transfer-file-transfering {
-    color: #1f1f1f;
-    background: #A9C1FF;
-}
-
-.transfer-file-name {
-    max-width: 250px;
-    margin-right: 50px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
 /*****************************
             Share
 ******************************/
+.share-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .share-page {
     display: flex;
     flex-direction: column;
@@ -679,8 +507,11 @@ footer {
 }
 
 .share-logo {
+    display: block;
+    text-decoration: none;
     height: 50px;
-    margin-right: 50px;
+    width: 360px;
+    margin: 40px 50px 40px;
     transform: scale(1);
 }
 
