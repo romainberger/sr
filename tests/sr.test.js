@@ -67,25 +67,6 @@ describe('Functional Tests', () => {
         })
     })
 
-    describe('Transfer', () => {
-        test('form switching', async () => {
-            await page.goto(`${BASE_URL}/transfer`)
-            const button = '.form-type-switch'
-            const pwdInput = 'input[type=password]'
-            await page.waitForSelector(button)
-
-            const loginInputs = await page.$$(pwdInput)
-
-            expect(loginInputs.length).toEqual(1)
-
-            await page.click(button)
-
-            const signUpInputs = await page.$$(pwdInput)
-
-            expect(signUpInputs.length).toEqual(2)
-        }, 5000)
-    })
-
     describe('Update manifests', () => {
       test('mac', async () => {
         const status = await getStatusCode(`${BASE_URL}/update-mac.json`)
