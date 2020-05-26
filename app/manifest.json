@@ -2,6 +2,6 @@
   "scripts": [
     "https://songriffer.com/app/manifest-7b6cefdc962a9349a599.js",
     "https://songriffer.com/app/vendors~renderer-add7804920c664ab04db.bundle.js",
-    "https://songriffer.com/app/renderer-341c4629404f66221eb4.bundle.js"
+    "https://songriffer.com/app/renderer-7e073a7923c006c68022.bundle.js"
   ],
 }
