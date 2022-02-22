@@ -204,8 +204,14 @@ class App extends React.Component {
                     <div className="download-block share-download-block">
                         <div>Download SongRiffer:</div>
                         <div className="download-links">
-                            <a className="download-link" href={ MAC_DOWNLOAD_URL } download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">Mac</a>
-                            <a className="download-link" href={ WINDOWS_DOWNLOAD_URL } download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">Windows</a>
+                            <a className="download-link" href={ MAC_DOWNLOAD_URL } download id="download-mac" data-platform="mac" title="Download SongRiffer for Mac">
+                                <span className="js-icon">{String.fromCharCode('61993')}</span>
+                                Mac
+                            </a>
+                            <a className="download-link" href={ WINDOWS_DOWNLOAD_URL } download id="download-windows" data-platform="windows" title="Download SongRiffer for Windows">
+                                <span className="js-icon">{String.fromCharCode('62255')}</span>
+                                Windows
+                            </a>
                         </div>
                     </div>
                 </div>
