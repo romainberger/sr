@@ -121,9 +121,9 @@ class App extends React.Component {
                 artist: 'SongRiffer',
                 album: 'Shared with SongRiffer',
                 artwork: [
-                    { src: 'https://songriffer.com/assets/icon_128x128.png', sizes: '128x128', type: 'image/png' },
-                    { src: 'https://songriffer.com/assets/icon_256x256.png', sizes: '256x256', type: 'image/png' },
-                    { src: 'https://songriffer.com/assets/icon_512x512.png', sizes: '512x512', type: 'image/png' },
+                    { src: 'https://romainberger.github.io/sr/assets/icon_128x128.png', sizes: '128x128', type: 'image/png' },
+                    { src: 'https://romainberger.github.io/sr/assets/icon_256x256.png', sizes: '256x256', type: 'image/png' },
+                    { src: 'https://romainberger.github.io/sr/assets/icon_512x512.png', sizes: '512x512', type: 'image/png' },
                 ]
             });
 
